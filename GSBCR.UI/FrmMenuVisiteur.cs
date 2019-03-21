@@ -13,7 +13,7 @@ namespace GSBCR.UI
 {
     public partial class FrmMenuVisiteur : Form
     {
-        private VISITEUR LeVisiteur;
+        private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
         public FrmMenuVisiteur()
         {
@@ -21,12 +21,12 @@ namespace GSBCR.UI
             //le visiteur doit être passé en paramètre par le menu de connexion
             //Ici initialiser le visiteur en dur
             //visiteur
-            LeVisiteur = Manager.ChargerVisiteur("a131", "secret18");
+            leVisiteur = Manager.ChargerVisiteur("a131", "30BFD069");
             //délégue
             //leVisiteur = Manager.ChargerVisiteur("r58", "0CC56730");
             try
             {
-                leProfil = Manager.ChargerAffectationVisiteur(LeVisiteur.VIS_MATRICULE);
+                leProfil = Manager.ChargerAffectationVisiteur(leVisiteur.VIS_MATRICULE);
             }
             catch (Exception ex)
             {
@@ -37,14 +37,15 @@ namespace GSBCR.UI
 
         private void FrmMenuVisiteur_Load(object sender, EventArgs e)
         {
-            label2.Text = leProfil.TRA_ROLE + " " + LeVisiteur.Vis_PRENOM + " " + LeVisiteur.VIS_NOM;
+            label2.Text = leProfil.TRA_ROLE + " " + leVisiteur.Vis_PRENOM + " " + leVisiteur.VIS_NOM;
             label3.Text = "Region : " + leProfil.REG_CODE;
+            
         }
 
         private void btnNouveau_Click(object sender, EventArgs e)
         {
             RAPPORT_VISITE r = new RAPPORT_VISITE();
-            r.RAP_MATRICULE = LeVisiteur.VIS_MATRICULE;
+            r.RAP_MATRICULE = leVisiteur.VIS_MATRICULE;
             FrmSaisir f = new FrmSaisir(r, true);
             f.ShowDialog();
         }
