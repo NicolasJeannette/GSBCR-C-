@@ -50,7 +50,19 @@ namespace GSBCR.DAL
         public static List<PRATICIEN> FindByType(string code)
         {
             //A faire : charger tous les praticiens d'un type
-            return null;
+           List<PRATICIEN> patyp = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //désactiver le chargement différé
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from p in context.PRATICIEN.Include("LeType")
+                          where p.TYP_CODE == code
+                          select p;
+                patyp = req.ToList<PRATICIEN>();
+
+            }
+            return patyp;
+            
         }
     }
 }

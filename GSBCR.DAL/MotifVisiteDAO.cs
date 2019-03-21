@@ -14,14 +14,35 @@ namespace GSBCR.DAL
     {
         public static MOTIF_VISITE FindById(string code)
         {
-            //A faire : rechercher un motif visite par son nom
-            return null;
+            MOTIF_VISITE motif = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //désactiver le chargement différé
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from m in context.MOTIF_VISITE.Include("LesRapports")
+                          where m.MOT_CODE == code
+                          select m;
+                motif= req.SingleOrDefault<MOTIF_VISITE>();
+
+            }
+            return motif;
         }
 
         public static List<MOTIF_VISITE> FindAll()
         {
+            List<MOTIF_VISITE> motifs = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //désactiver le chargement différé
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from m in context.MOTIF_VISITE.Include("LesRapports")
+                          select m;
+                motifs = req.ToList<MOTIF_VISITE>();
+
+            }
+            return motifs;
             //A faire : charger tous les motifs visite
-            return null;
+            
         }
     }
 }

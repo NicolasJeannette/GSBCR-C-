@@ -49,7 +49,19 @@ namespace GSBCR.DAL
         public static List<MEDICAMENT> FindByFamille(string code)
         {
             //A faire : charger tous les médicaments d'une famille
-            return null;
+            List<MEDICAMENT> medfam = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //désactiver le chargement différé
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from p in context.MEDICAMENT.Include("laFamille")
+                          where p.FAM_CODE == code
+                          select p;
+                medfam = req.ToList<MEDICAMENT>();
+
+            }
+            return medfam;
+           
         }
     }
 }

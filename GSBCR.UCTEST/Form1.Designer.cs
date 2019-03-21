@@ -47,7 +47,7 @@
             this.ucMedicament1.LeMedicament = null;
             this.ucMedicament1.Location = new System.Drawing.Point(113, 40);
             this.ucMedicament1.Name = "ucMedicament1";
-            this.ucMedicament1.Size = new System.Drawing.Size(681, 705);
+            this.ucMedicament1.Size = new System.Drawing.Size(668, 705);
             this.ucMedicament1.TabIndex = 0;
             // 
             // titre
@@ -74,7 +74,7 @@
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(793, 650);
+            this.btnClose.Location = new System.Drawing.Point(800, 651);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(105, 38);
             this.btnClose.TabIndex = 3;
