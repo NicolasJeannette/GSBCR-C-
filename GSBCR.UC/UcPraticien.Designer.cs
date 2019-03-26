@@ -46,6 +46,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCODE = new System.Windows.Forms.TextBox();
+            this.btnVoirRapport = new System.Windows.Forms.Button();
+            this.txtType = new System.Windows.Forms.TextBox();
+            this.txtTypeLieu = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,10 +201,46 @@
             this.txtCODE.Size = new System.Drawing.Size(100, 20);
             this.txtCODE.TabIndex = 16;
             // 
+            // btnVoirRapport
+            // 
+            this.btnVoirRapport.Location = new System.Drawing.Point(450, 401);
+            this.btnVoirRapport.Name = "btnVoirRapport";
+            this.btnVoirRapport.Size = new System.Drawing.Size(167, 23);
+            this.btnVoirRapport.TabIndex = 17;
+            this.btnVoirRapport.Text = "Voir les rapports de ce Praticien";
+            this.btnVoirRapport.UseVisualStyleBackColor = true;
+            // 
+            // txtType
+            // 
+            this.txtType.Location = new System.Drawing.Point(163, 163);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(100, 20);
+            this.txtType.TabIndex = 18;
+            // 
+            // txtTypeLieu
+            // 
+            this.txtTypeLieu.Location = new System.Drawing.Point(275, 163);
+            this.txtTypeLieu.Name = "txtTypeLieu";
+            this.txtTypeLieu.Size = new System.Drawing.Size(195, 20);
+            this.txtTypeLieu.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(61, 163);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Type Praticien";
+            // 
             // UcPraticien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtTypeLieu);
+            this.Controls.Add(this.txtType);
+            this.Controls.Add(this.btnVoirRapport);
             this.Controls.Add(this.txtCODE);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
@@ -216,7 +256,7 @@
             this.Controls.Add(this.txtADRESSE);
             this.Controls.Add(this.txtNUM);
             this.Name = "UcPraticien";
-            this.Size = new System.Drawing.Size(714, 464);
+            this.Size = new System.Drawing.Size(714, 613);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -225,15 +265,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNUM;
         private System.Windows.Forms.TextBox txtNOM;
         private System.Windows.Forms.TextBox txtPRENOM;
         private System.Windows.Forms.TextBox txtADRESSE;
         private System.Windows.Forms.TextBox txtCP;
         private System.Windows.Forms.TextBox txtVILLE;
         private System.Windows.Forms.TextBox txtCOEFF;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -244,5 +281,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCODE;
+        public System.Windows.Forms.TextBox txtNUM;
+        public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnVoirRapport;
+        private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.TextBox txtTypeLieu;
+        private System.Windows.Forms.Label label10;
     }
 }

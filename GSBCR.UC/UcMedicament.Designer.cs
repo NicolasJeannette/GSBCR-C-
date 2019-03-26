@@ -38,12 +38,13 @@
             this.txtDepot = new System.Windows.Forms.TextBox();
             this.txtCommercial = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtCode = new System.Windows.Forms.TextBox();
             this.txtNomFamille = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.richtxtComposition = new System.Windows.Forms.RichTextBox();
             this.richtxtEffets = new System.Windows.Forms.RichTextBox();
             this.richtxtIndications = new System.Windows.Forms.RichTextBox();
             this.txtPrix = new System.Windows.Forms.TextBox();
+            this.btnVoirRapport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,15 +139,6 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // txtCode
-            // 
-            this.txtCode.CausesValidation = false;
-            this.txtCode.Location = new System.Drawing.Point(16, 19);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(100, 20);
-            this.txtCode.TabIndex = 0;
-            this.txtCode.TabStop = false;
-            // 
             // txtNomFamille
             // 
             this.txtNomFamille.CausesValidation = false;
@@ -155,6 +147,15 @@
             this.txtNomFamille.Size = new System.Drawing.Size(315, 20);
             this.txtNomFamille.TabIndex = 1;
             this.txtNomFamille.TabStop = false;
+            // 
+            // txtCode
+            // 
+            this.txtCode.CausesValidation = false;
+            this.txtCode.Location = new System.Drawing.Point(16, 19);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(100, 20);
+            this.txtCode.TabIndex = 0;
+            this.txtCode.TabStop = false;
             // 
             // richtxtComposition
             // 
@@ -198,10 +199,20 @@
             this.txtPrix.TabIndex = 13;
             this.txtPrix.TabStop = false;
             // 
+            // btnVoirRapport
+            // 
+            this.btnVoirRapport.Location = new System.Drawing.Point(312, 596);
+            this.btnVoirRapport.Name = "btnVoirRapport";
+            this.btnVoirRapport.Size = new System.Drawing.Size(140, 20);
+            this.btnVoirRapport.TabIndex = 14;
+            this.btnVoirRapport.Text = "Voir Rapport Médicament";
+            this.btnVoirRapport.UseVisualStyleBackColor = true;
+            // 
             // UcMedicament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnVoirRapport);
             this.Controls.Add(this.txtPrix);
             this.Controls.Add(this.richtxtIndications);
             this.Controls.Add(this.richtxtEffets);
@@ -243,5 +254,6 @@
         private System.Windows.Forms.RichTextBox richtxtEffets;
         private System.Windows.Forms.RichTextBox richtxtIndications;
         private System.Windows.Forms.TextBox txtPrix;
+        private System.Windows.Forms.Button btnVoirRapport;
     }
 }

@@ -41,6 +41,7 @@ namespace GSBCR.UC
             txtVILLE.Text = lePraticien.PRA_VILLE;
             txtCOEFF.Text =  Convert.ToString(lePraticien.PRA_COEFNOTORIETE);
             txtCODE.Text = lePraticien.TYP_CODE;
+            
         }
     }
 }
