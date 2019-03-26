@@ -66,8 +66,15 @@ namespace GSBCR.BLL
         /// <returns>List<RAPPORT_VISITE>/returns>
         public static List<RAPPORT_VISITE> ChargerRapportVisiteurFinis(String m)
         {
-            //A faire : charger les rapports terminés (état = 2 ou 3) du visiteur
-            return null;
+            List<string> matricule = new List<string>();
+            List<int> etats = new List<int>();
+            matricule.Add(m);
+            etats.Add(2);
+            etats.Add(3);
+            List<RAPPORT_VISITE> lrv = new List<RAPPORT_VISITE>();
+            lrv = RapportVisiteDAO.FindByEtatEtVisiteur(matricule, etats);
+
+            return lrv;
         }
         /// <summary>
         /// Permet de retourner une liste de visiteurs pour un région à partir de vaffectation
@@ -93,8 +100,23 @@ namespace GSBCR.BLL
     public static List<RAPPORT_VISITE> ChargerRapportRegionNonLus(String code)
         {
             //A faire : charger les rapports terminés et non lus (état = 2 ) des visiteurs d'une région
+            List<string> lesMatricules = new List<string>();
+            List<VAFFECTATION> lesVf = VaffectationDAO.FindByRegion(code);
+            List<int> etats = new List<int>();
+            foreach (string matricule in lesMatricules)
+            {
+                foreach (VAFFECTATION v in lesVf)
+                {
+                    lesMatricules.Add(v.VIS_MATRICULE);
+                }
 
-            return null;
+            }
+            etats.Add(2);
+            List<RAPPORT_VISITE> lrp = new List<RAPPORT_VISITE>();
+
+
+            lrp = RapportVisiteDAO.FindByEtatEtVisiteur(lesMatricules, etats);
+            return lrp;
         }
         /// Permet de charger les rapports terminés et consultés (état 3) des visiteurs d'une région 
         /// </summary>
@@ -103,8 +125,23 @@ namespace GSBCR.BLL
         public static List<RAPPORT_VISITE> ChargerRapportRegionLus(String r)
         {
             //A faire : charger les rapports terminés (état = 3) des visiteurs d'une région
+            List<string> lesMatricules = new List<string>();
+            List<VAFFECTATION> lesVf = VaffectationDAO.FindByRegion(r);
+            List<int> etats = new List<int>();
+            foreach (string matricule in lesMatricules)
+            {
+                foreach (VAFFECTATION v in lesVf)
+                {
+                    lesMatricules.Add(v.VIS_MATRICULE);
+                }
 
-            return null;
+            }
+            etats.Add(3);
+            List<RAPPORT_VISITE> lrp = new List<RAPPORT_VISITE>();
+
+
+            lrp = RapportVisiteDAO.FindByEtatEtVisiteur(lesMatricules, etats);
+            return lrp;
         }
         /// <summary>
         /// Permet de créer un rapport dans la base de données 
@@ -146,7 +183,8 @@ namespace GSBCR.BLL
         /// </summary>
         public static List<MOTIF_VISITE> ChargerMotifVisites()
         {
-            return null;
+            List<MOTIF_VISITE> mv = MotifVisiteDAO.FindAll();
+            return mv;
         }
         /// <summary>
         /// Permet de charger tous les praticiens
