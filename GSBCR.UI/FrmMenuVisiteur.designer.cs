@@ -37,6 +37,7 @@
             this.btnModif = new System.Windows.Forms.Button();
             this.btnPraticien = new System.Windows.Forms.Button();
             this.btnMed = new System.Windows.Forms.Button();
+            this.btnDeco = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -125,11 +126,22 @@
             this.btnMed.UseVisualStyleBackColor = true;
             this.btnMed.Click += new System.EventHandler(this.btnMed_Click);
             // 
+            // btnDeco
+            // 
+            this.btnDeco.Location = new System.Drawing.Point(12, 376);
+            this.btnDeco.Name = "btnDeco";
+            this.btnDeco.Size = new System.Drawing.Size(93, 23);
+            this.btnDeco.TabIndex = 11;
+            this.btnDeco.Text = "Se déconnecter";
+            this.btnDeco.UseVisualStyleBackColor = true;
+            this.btnDeco.Click += new System.EventHandler(this.btnDeco_Click);
+            // 
             // FrmMenuVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 411);
+            this.Controls.Add(this.btnDeco);
             this.Controls.Add(this.btnMed);
             this.Controls.Add(this.btnPraticien);
             this.Controls.Add(this.btnModif);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.Button btnPraticien;
         private System.Windows.Forms.Button btnMed;
+        private System.Windows.Forms.Button btnDeco;
     }
 }

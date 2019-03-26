@@ -111,5 +111,14 @@ namespace GSBCR.UI
             fm.ShowDialog();
             
         }
+
+        private void btnDeco_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmConnexion frm = new FrmConnexion();
+            frm.Show();
+           
+
+        }
     }
 }

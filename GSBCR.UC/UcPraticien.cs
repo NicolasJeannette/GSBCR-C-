@@ -42,6 +42,31 @@ namespace GSBCR.UC
             txtCOEFF.Text =  Convert.ToString(lePraticien.PRA_COEFNOTORIETE);
             txtCODE.Text = lePraticien.TYP_CODE;
             
+            if(txtCODE.Text == "MH")
+            {
+                txtType.Text = "Médecin Hospitalier";
+                txtTypeLieu.Text = "Hopital ou clinique";
+            }
+            if (txtCODE.Text == "MV")
+            {
+                txtType.Text = "Médecine de Ville";
+                txtTypeLieu.Text = "Cabinet";
+            }
+            if (txtCODE.Text == "PH")
+            {
+                txtType.Text = "Pharmacien Hospitalier";
+                txtTypeLieu.Text = "Hopital ou clinique";
+            }
+            if (txtCODE.Text == "PO")
+            {
+                txtType.Text = "Pharmacien Officine";
+                txtTypeLieu.Text = "Pharmacie";
+            }
+            if (txtCODE.Text == "PS")
+            {
+                txtType.Text = "Personnel de santé";
+                txtTypeLieu.Text = "Centre Paramédical";
+            }
         }
     }
 }

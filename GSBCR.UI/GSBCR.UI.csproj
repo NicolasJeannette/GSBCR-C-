@@ -152,6 +152,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GSBCR.UCTEST\GSBCR.UCTEST.csproj">
+      <Project>{e07e74c9-a8db-4b81-8c93-7429780a3cb3}</Project>
+      <Name>GSBCR.UCTEST</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
