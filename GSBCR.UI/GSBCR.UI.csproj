@@ -57,15 +57,23 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\GSBCR2017_eleves\GSBCR.BLL\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="GSBCR.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\GSBCR2017_eleves\GSBCR.BLL\bin\Debug\GSBCR.BLL.dll</HintPath>
+      <HintPath>..\GSBCR.BLL\bin\Debug\GSBCR.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="GSBCR.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\GSBCR.DAL\bin\Debug\GSBCR.DAL.dll</HintPath>
     </Reference>
     <Reference Include="GSBCR.modele, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\GSBCR2017_eleves\GSBCR.BLL\bin\Debug\GSBCR.modele.dll</HintPath>
+      <HintPath>..\GSBCR.modele\bin\Debug\GSBCR.modele.dll</HintPath>
+    </Reference>
+    <Reference Include="GSBCR.UC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\GSBCR.UC\bin\Debug\GSBCR.UC.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -79,6 +87,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmConnexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConnexion.Designer.cs">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenuVisiteur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +107,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmConnexion.resx">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuVisiteur.resx">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GSBCR.modele;
+using GSBCR.DAL;
 using GSBCR.BLL;
 
 namespace GSBCR.UI
@@ -15,13 +16,13 @@ namespace GSBCR.UI
     {
         private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
-        public FrmMenuVisiteur()
+        public FrmMenuVisiteur(string id,string mdp)
         {
             InitializeComponent();
             //le visiteur doit être passé en paramètre par le menu de connexion
             //Ici initialiser le visiteur en dur
             //visiteur
-            leVisiteur = Manager.ChargerVisiteur("a131", "30BFD069");
+            leVisiteur = Manager.ChargerVisiteur(id, mdp);
             //délégue
             //leVisiteur = Manager.ChargerVisiteur("r58", "0CC56730");
             try

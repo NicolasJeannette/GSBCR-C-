@@ -17,7 +17,7 @@ namespace GSBCR.DAL
         /// </summary>
         /// <param name="matricule">matricule Visiteur</param>
         /// <returns>VAFFECTATION</returns>
-        public static VAFFECTATION FindByMatricule(string matricule)
+        public static GSBCR.modele.VAFFECTATION FindByMatricule(string matricule)
         {
             VAFFECTATION v = null;
             using (var context = new GSB_VisiteEntities())

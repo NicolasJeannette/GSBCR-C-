@@ -116,6 +116,7 @@ namespace GSBCR.UI
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            
             bool ajout;
             if (String.IsNullOrEmpty(txtNum.Text))
             {
@@ -161,6 +162,7 @@ namespace GSBCR.UI
             }
                       
             btnValider.Enabled = true;
+            
         }
 
         private void cbxNomPraticien_SelectedIndexChanged(object sender, EventArgs e)
@@ -233,6 +235,11 @@ namespace GSBCR.UI
         private void btnVoirMed2_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void chbDefinitif_CheckedChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
