@@ -37,7 +37,6 @@
             this.ucPraticien1 = new GSBCR.UC.UcPraticien();
             this.cbxPraticien = new System.Windows.Forms.ComboBox();
             this.bsPraticien = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).BeginInit();
             this.SuspendLayout();
@@ -56,9 +55,9 @@
             this.titre.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titre.Location = new System.Drawing.Point(13, 13);
             this.titre.Name = "titre";
-            this.titre.Size = new System.Drawing.Size(277, 24);
+            this.titre.Size = new System.Drawing.Size(0, 24);
             this.titre.TabIndex = 1;
-            this.titre.Text = "Consultation Médicament";
+            this.titre.Visible = false;
             // 
             // cbxMedoc
             // 
@@ -68,6 +67,7 @@
             this.cbxMedoc.Name = "cbxMedoc";
             this.cbxMedoc.Size = new System.Drawing.Size(121, 21);
             this.cbxMedoc.TabIndex = 2;
+            this.cbxMedoc.Visible = false;
             this.cbxMedoc.SelectedIndexChanged += new System.EventHandler(this.cbxMedoc_SelectedIndexChanged);
             // 
             // btnClose
@@ -98,24 +98,14 @@
             this.cbxPraticien.Name = "cbxPraticien";
             this.cbxPraticien.Size = new System.Drawing.Size(121, 21);
             this.cbxPraticien.TabIndex = 5;
+            this.cbxPraticien.Visible = false;
             this.cbxPraticien.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 24);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Consultation Praticien";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 719);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxPraticien);
             this.Controls.Add(this.ucPraticien1);
             this.Controls.Add(this.btnClose);
@@ -135,14 +125,13 @@
         #endregion
 
         private UC.UcMedicament ucMedicament1;
-        private System.Windows.Forms.Label titre;
-        private System.Windows.Forms.ComboBox cbxMedoc;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.BindingSource bsMedoc;
         private UC.UcPraticien ucPraticien1;
-        private System.Windows.Forms.ComboBox cbxPraticien;
         private System.Windows.Forms.BindingSource bsPraticien;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox cbxMedoc;
+        public System.Windows.Forms.ComboBox cbxPraticien;
+        public System.Windows.Forms.Label titre;
     }
 }
 

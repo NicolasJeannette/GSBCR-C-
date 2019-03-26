@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using GSBCR.modele;
 using GSBCR.BLL;
+using GSBCR.UCTEST;
 
 namespace GSBCR.UI
 {
@@ -39,7 +40,37 @@ namespace GSBCR.UI
         {
             label2.Text = leProfil.TRA_ROLE + " " + leVisiteur.Vis_PRENOM + " " + leVisiteur.VIS_NOM;
             label3.Text = "Region : " + leProfil.REG_CODE;
-            
+            btnNouveau.Visible = false;
+            btnModif.Visible = false;
+            btnVoirValide.Visible = false;
+            btnPraticien.Visible = true;
+            btnMed.Visible = true;
+
+            if (leProfil.TRA_ROLE == "Visiteur")
+            {
+                btnNouveau.Visible = true;
+                btnModif.Visible = true;
+                btnVoirValide.Visible = true;
+               
+            }
+            if (leProfil.TRA_ROLE == "Délégué")
+            {
+                //Btn voir les nouveaux rapports visite   (Option)
+                //btn voir les visiteurs de son équipe      (Option)
+                btnNouveau.Visible = true;
+                btnModif.Visible = true;
+                btnVoirValide.Visible = true;
+
+            }
+            if (leProfil.TRA_ROLE == "Responsable")
+            {
+                //Btn voir les visiteurs de son équipe      (Option)
+                //btn gérer les visiteurs et les délégués       (Option)
+
+            }
+
+
+
         }
 
         private void btnNouveau_Click(object sender, EventArgs e)
@@ -54,6 +85,30 @@ namespace GSBCR.UI
         {
             this.Close();
             Application.Exit();
+        }
+
+        private void btnPraticien_Click(object sender, EventArgs e)
+        {
+            Form1 fp = new Form1();
+            fp.cbxMedoc.Visible = false;
+            fp.titre.Visible = true;
+            fp.titre.Text = "Consultation Praticien";
+            fp.cbxPraticien.Visible = true;
+            
+            fp.ShowDialog();
+            
+        }
+
+        private void btnMed_Click(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.cbxPraticien.Visible = false;
+            
+            fm.titre.Visible = true;
+            fm.titre.Text = "Consultation Médicament";
+            fm.cbxMedoc.Visible = true;
+            fm.ShowDialog();
+            
         }
     }
 }

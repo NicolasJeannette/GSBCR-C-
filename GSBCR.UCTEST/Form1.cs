@@ -23,7 +23,8 @@ namespace GSBCR.UCTEST
             bsPraticien.DataSource = Manager.ChargerPraticiens();
             cbxPraticien.DataSource = bsPraticien;
             cbxPraticien.DisplayMember = "PRA_NOM";
-            label1.Visible = false;
+            
+            titre.Visible = false;
 
         }
 
@@ -50,8 +51,8 @@ namespace GSBCR.UCTEST
                 ucMedicament1.Visible = true;
             }
             ucMedicament1.BringToFront();
-            label1.Visible = false;
-            titre.Visible = true;
+            
+            
 
         }
 
@@ -64,8 +65,8 @@ namespace GSBCR.UCTEST
                 ucPraticien1.Visible = true;
             }
             ucPraticien1.BringToFront();
-            titre.Visible = false;
-            label1.Visible = true;
+            
+            
         }
     }
 }

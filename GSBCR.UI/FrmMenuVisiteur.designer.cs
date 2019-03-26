@@ -33,6 +33,10 @@
             this.btnNouveau = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.btnVoirValide = new System.Windows.Forms.Button();
+            this.btnModif = new System.Windows.Forms.Button();
+            this.btnPraticien = new System.Windows.Forms.Button();
+            this.btnMed = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -83,11 +87,53 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
+            // btnVoirValide
+            // 
+            this.btnVoirValide.Location = new System.Drawing.Point(154, 218);
+            this.btnVoirValide.Name = "btnVoirValide";
+            this.btnVoirValide.Size = new System.Drawing.Size(200, 21);
+            this.btnVoirValide.TabIndex = 7;
+            this.btnVoirValide.Text = "Voir Rapport Validé";
+            this.btnVoirValide.UseVisualStyleBackColor = true;
+            // 
+            // btnModif
+            // 
+            this.btnModif.Location = new System.Drawing.Point(154, 191);
+            this.btnModif.Name = "btnModif";
+            this.btnModif.Size = new System.Drawing.Size(200, 21);
+            this.btnModif.TabIndex = 8;
+            this.btnModif.Text = "Modifier Rapport Visite";
+            this.btnModif.UseVisualStyleBackColor = true;
+            // 
+            // btnPraticien
+            // 
+            this.btnPraticien.Location = new System.Drawing.Point(154, 245);
+            this.btnPraticien.Name = "btnPraticien";
+            this.btnPraticien.Size = new System.Drawing.Size(200, 21);
+            this.btnPraticien.TabIndex = 9;
+            this.btnPraticien.Text = "Consulter Praticien";
+            this.btnPraticien.UseVisualStyleBackColor = true;
+            this.btnPraticien.Click += new System.EventHandler(this.btnPraticien_Click);
+            // 
+            // btnMed
+            // 
+            this.btnMed.Location = new System.Drawing.Point(154, 272);
+            this.btnMed.Name = "btnMed";
+            this.btnMed.Size = new System.Drawing.Size(200, 21);
+            this.btnMed.TabIndex = 10;
+            this.btnMed.Text = "Consulter Médicament";
+            this.btnMed.UseVisualStyleBackColor = true;
+            this.btnMed.Click += new System.EventHandler(this.btnMed_Click);
+            // 
             // FrmMenuVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 411);
+            this.Controls.Add(this.btnMed);
+            this.Controls.Add(this.btnPraticien);
+            this.Controls.Add(this.btnModif);
+            this.Controls.Add(this.btnVoirValide);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnNouveau);
@@ -108,5 +154,9 @@
         private System.Windows.Forms.Button btnNouveau;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Button btnVoirValide;
+        private System.Windows.Forms.Button btnModif;
+        private System.Windows.Forms.Button btnPraticien;
+        private System.Windows.Forms.Button btnMed;
     }
 }
