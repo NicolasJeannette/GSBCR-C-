@@ -126,15 +126,34 @@ namespace GSBCR.UI
             {
                 ajout = false;
             }
+            if (chbDefinitif.Checked==true)
+            {
+                if (cbxNomPraticien.SelectedValue == null)
+                {
+                    MessageBox.Show("Veuillez Sélectionner un praticien");
+                }
+                if (cbxMotif.SelectedValue == null)
+                {
+                    MessageBox.Show("Veuillez Sélectionner un motif");
+                }
+                if (nupCoef.Value == 0)
+                {
+                    MessageBox.Show("Veuillez Sélectionner un niveau de confiance");
+                }
+            }
+            else
+            {
+                r.RAP_DATVISIT = dtDateVisite.Value;
+                r.RAP_MOTIF = cbxMotif.SelectedValue.ToString();
+                r.RAP_MOTIFAUTRE = txtAutre.Text;
+                r.RAP_CONFIANCE = nupCoef.Value.ToString();
+                r.RAP_PRANUM = Convert.ToInt16(cbxNomPraticien.SelectedValue);
+                r.RAP_BILAN = txtBilan.Text;
+                r.RAP_MED1 = txtMed1.Text;
+                r.RAP_MED2 = txtMed2.Text;
+            }
                       
-            r.RAP_DATVISIT = dtDateVisite.Value;
-            r.RAP_MOTIF = cbxMotif.SelectedValue.ToString();
-            r.RAP_MOTIFAUTRE = txtAutre.Text;
-            r.RAP_CONFIANCE = nupCoef.Value.ToString();
-            r.RAP_PRANUM= Convert.ToInt16(cbxNomPraticien.SelectedValue);
-            r.RAP_BILAN = txtBilan.Text;
-            r.RAP_MED1 = txtMed1.Text;
-            r.RAP_MED2 = txtMed2.Text;
+           
             if (chbDefinitif.Checked)
                 r.RAP_ETAT = "2";
             else
