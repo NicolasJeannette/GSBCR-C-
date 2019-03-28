@@ -20,11 +20,23 @@ namespace GSBCR.UI
         /// <param name="maj">code maj</param>
         /// <returns></returns>
         private RAPPORT_VISITE r;
+        private int cnt=0;
         //maj = vrai si création/modification
         //maj = faux si consultation
-        public FrmSaisir(RAPPORT_VISITE r, bool maj)
+        public FrmSaisir(RAPPORT_VISITE r, bool maj,string mode)
         {
             InitializeComponent();
+
+            if (mode=="ajout")
+            {
+                lblSelRap.Visible = false;
+                cbxSelectRapport.Visible = false;
+            }
+            else
+            {
+                
+                lblTitre.Text = "Modification du rapport";
+            }
             this.r = r;
             //Initialisation de la liste déroulante praticien
             List<PRATICIEN> lp = Manager.ChargerPraticiens();
@@ -67,7 +79,13 @@ namespace GSBCR.UI
                 btnValider.Visible = false;
                 lblTitre.Text = "Consultation d'un rapport";
             }
-                       
+            List<RAPPORT_VISITE> lr = new List<RAPPORT_VISITE>();
+            lr = Manager.ChargerRapportVisiteurEncours(txtMatricule.Text);
+            cbxSelectRapport.DataSource = lr;
+            cbxSelectRapport.DisplayMember = "RAP_NUM";
+            cbxSelectRapport.ValueMember = "RAP_NUM";
+            cbxSelectRapport.SelectedIndex = -1;
+            this.cnt = lr.Count;
         }
 
         private void InitRapport()
@@ -126,61 +144,93 @@ namespace GSBCR.UI
             {
                 ajout = false;
             }
-            if (chbDefinitif.Checked==true)
-            {
-                if (cbxNomPraticien.SelectedValue == null)
-                {
-                    MessageBox.Show("Veuillez Sélectionner un praticien");
-                }
-                if (cbxMotif.SelectedValue == null)
-                {
-                    MessageBox.Show("Veuillez Sélectionner un motif");
-                }
-                if (nupCoef.Value == 0)
-                {
-                    MessageBox.Show("Veuillez Sélectionner un niveau de confiance");
-                }
-            }
-            else
-            {
-                r.RAP_DATVISIT = dtDateVisite.Value;
-                r.RAP_MOTIF = cbxMotif.SelectedValue.ToString();
-                r.RAP_MOTIFAUTRE = txtAutre.Text;
-                r.RAP_CONFIANCE = nupCoef.Value.ToString();
-                r.RAP_PRANUM = Convert.ToInt16(cbxNomPraticien.SelectedValue);
-                r.RAP_BILAN = txtBilan.Text;
-                r.RAP_MED1 = txtMed1.Text;
-                r.RAP_MED2 = txtMed2.Text;
-            }
-                      
-           
+
             if (chbDefinitif.Checked)
                 r.RAP_ETAT = "2";
             else
                 r.RAP_ETAT = "1";
-            try
+            if (chbDefinitif.Checked == true && cbxNomPraticien.SelectedValue == null)
             {
-                if (ajout)
+                MessageBox.Show("Veuillez Sélectionner un praticien");
+            }
+            else if (chbDefinitif.Checked == true && cbxMotif.SelectedValue == null)
+            {
+                MessageBox.Show("Veuillez Sélectionner un motif");
+            }
+            else if (chbDefinitif.Checked == true && nupCoef.Value == 0)
+            {
+                MessageBox.Show("Veuillez Sélectionner un niveau de confiance");
+            }
+            else if (chbDefinitif.Checked == true && txtBilan.Text == "")
+            {
+                MessageBox.Show("Veuillez saisir un bilan");
+            }
+            else if (cbxMed1.SelectedItem == null || cbxMed2.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez sélectionner des médicaments");
+            }
+            else if (txtCodeMotif.Text=="AU" && txtAutre.Text=="")
+            {
+                MessageBox.Show("Veuillez saisir un autre motif");
+            }
+            else
+            {
+                
+                if (cbxMotif.SelectedValue == null) { r.RAP_MOTIF = "AU"; }
+
+                else { r.RAP_MOTIF = cbxMotif.SelectedValue.ToString(); }
+
+                    r.RAP_DATVISIT = dtDateVisite.Value;
+                   
+                if (cbxNomPraticien.SelectedValue==null)
                 {
-                    Manager.CreateRapport(r);
-                    txtNum.Text = r.RAP_NUM.ToString();
+                    r.RAP_PRANUM = 1;
+                }
+                if (nupCoef.Value==0)
+                {
+                    r.RAP_CONFIANCE = "0";
+                }
+                if (txtBilan.Text=="")
+                {
+                    r.RAP_BILAN="";
                 }
                 else
                 {
-                    Manager.MajRapport(r);
+                    r.RAP_BILAN = "";
+                    r.RAP_PRANUM = Convert.ToInt16(cbxNomPraticien.SelectedValue);
+                    r.RAP_CONFIANCE = nupCoef.Value.ToString();
+                }
+                r.RAP_MOTIFAUTRE = txtAutre.Text;
+                r.RAP_MED1 = txtMed1.Text;
+                r.RAP_MED2 = txtMed2.Text;
+
+                try
+                {
+                    if (ajout)
+                    {
+                        Manager.CreateRapport(r);
+                        txtNum.Text = r.RAP_NUM.ToString();
+                    }
+                    else
+                    {
+                        Manager.MajRapport(r);
+                    }
+
+                    MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Abandon traitement : " + ex.GetBaseException().Message, "Erreur base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Abandon traitement : " + ex.GetBaseException().Message, "Erreur base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnValider.Enabled = true;
             }
                       
-            btnValider.Enabled = true;
+
+
             
         }
 
@@ -259,6 +309,53 @@ namespace GSBCR.UI
         private void chbDefinitif_CheckedChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbxSelectRapport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+            if (cbxSelectRapport.SelectedIndex!=-1)
+            {
+                txtNum.Text = cbxSelectRapport.SelectedValue.ToString();
+            }
+            else
+                txtNum.Text = String.Empty;
+        }
+
+        private void txtNum_TextChanged(object sender, EventArgs e)
+        {
+
+
+            
+            if (cnt==cbxSelectRapport.Items.Count)
+            {
+                RAPPORT_VISITE r = new RAPPORT_VISITE();
+                r = Manager.ChargerRapportVisite(txtMatricule.Text, Convert.ToInt16(txtNum.Text));
+                dtDateVisite.Value = r.RAP_DATVISIT;
+                cbxNomPraticien.SelectedValue = r.RAP_PRANUM;
+                cbxNomPraticien.SelectedValue = r.RAP_PRANUM;
+                txtCodeMotif.Text = r.RAP_MOTIF;
+                nupCoef.Value = Convert.ToDecimal(r.RAP_CONFIANCE);
+                txtBilan.Text = r.RAP_BILAN;              
+                txtMed1.Text = r.RAP_MED1;
+                if (r.RAP_MED1!=null)
+                {
+                    cbxMed1.SelectedValue = r.RAP_MED1;
+                }
+                if (r.RAP_MED2!=null)
+                {
+                    cbxMed2.SelectedValue = r.RAP_MED2;
+                }
+                txtMed2.Text = r.RAP_MED2;
+                cbxMotif.SelectedValue = r.RAP_MOTIF;
+                if (r.RAP_MOTIF=="AU")
+                {
+                    txtAutre.Text = r.RAP_MOTIFAUTRE;
+                }
+
+            }
+            
         }
     }
 }

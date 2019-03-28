@@ -105,6 +105,7 @@
             this.btnModif.TabIndex = 8;
             this.btnModif.Text = "Modifier Rapport Visite";
             this.btnModif.UseVisualStyleBackColor = true;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
             // 
             // btnPraticien
             // 
