@@ -227,6 +227,7 @@ namespace GSBCR.UI
                     }
                     else
                     {
+                        r.RAP_NUM = Convert.ToInt16(cbxSelectRapport.SelectedValue);
                         Manager.MajRapport(r);
                     }
 
