@@ -161,22 +161,18 @@ namespace GSBCR.UI
             {
                 MessageBox.Show("Veuillez Sélectionner un niveau de confiance");
             }
-            else if (chbDefinitif.Checked == true && txtBilan.Text == "")
+            else if (chbDefinitif.Checked == true && txtBilan.Text == "" || chbDefinitif.Checked == true && txtBilan.Text.Trim() == "")
             {
                 MessageBox.Show("Veuillez saisir un bilan");
             }
-            else if (cbxMed1.SelectedItem == null || cbxMed2.SelectedItem == null)
-            {
-                MessageBox.Show("Veuillez sélectionner des médicaments");
-            }
-            else if (txtCodeMotif.Text=="AU" && txtAutre.Text=="")
+            else if (chbDefinitif.Checked == true && txtCodeMotif.Text=="AU" && txtAutre.Text=="")
             {
                 MessageBox.Show("Veuillez saisir un autre motif");
             }
             else
             {
                 
-                if (cbxMotif.SelectedValue == null) { r.RAP_MOTIF = "AU"; }
+                if (cbxMotif.SelectedValue == null) { r.RAP_MOTIF = "NA"; }
 
                 else { r.RAP_MOTIF = cbxMotif.SelectedValue.ToString(); }
 
@@ -184,11 +180,19 @@ namespace GSBCR.UI
                    
                 if (cbxNomPraticien.SelectedValue==null)
                 {
-                    r.RAP_PRANUM = 1;
+                    r.RAP_PRANUM = Convert.ToInt16(1);
+                }
+                else
+                {
+                    r.RAP_PRANUM = Convert.ToInt16(cbxNomPraticien.SelectedValue);
                 }
                 if (nupCoef.Value==0)
                 {
                     r.RAP_CONFIANCE = "0";
+                }
+                else
+                {
+                    r.RAP_CONFIANCE = nupCoef.Value.ToString();
                 }
                 if (txtBilan.Text=="")
                 {
@@ -196,14 +200,24 @@ namespace GSBCR.UI
                 }
                 else
                 {
-                    r.RAP_BILAN = "";
-                    r.RAP_PRANUM = Convert.ToInt16(cbxNomPraticien.SelectedValue);
-                    r.RAP_CONFIANCE = nupCoef.Value.ToString();
+                    r.RAP_BILAN = txtBilan.Text;
                 }
-                r.RAP_MOTIFAUTRE = txtAutre.Text;
-                r.RAP_MED1 = txtMed1.Text;
-                r.RAP_MED2 = txtMed2.Text;
+                if (txtMed1.Text=="" ||txtMed2.Text=="")
+                {
+                    r.RAP_MED1 = null;
+                    r.RAP_MED2 = null;
+                }
+                else
+                {
 
+                    r.RAP_MED1 = txtMed1.Text;
+                    r.RAP_MED2 = txtMed2.Text;
+
+                    
+
+                }
+
+                r.RAP_MOTIFAUTRE = txtAutre.Text;
                 try
                 {
                     if (ajout)
@@ -213,6 +227,7 @@ namespace GSBCR.UI
                     }
                     else
                     {
+                        r.RAP_NUM = Convert.ToInt16(cbxSelectRapport.SelectedValue);
                         Manager.MajRapport(r);
                     }
 
