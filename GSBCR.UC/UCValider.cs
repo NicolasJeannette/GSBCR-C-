@@ -35,7 +35,7 @@ namespace GSBCR.UC
         {
             
             boxRapport.Text = Convert.ToString(laVisite.RAP_NUM);
-            boxPraticien.Text = laVisite.;
+          //  boxPraticien.Text = laVisite.;
             boxDateVisite.Text = Convert.ToString(laVisite.RAP_DATVISIT);
             boxMotifVisite.Text = laVisite.RAP_MOTIF;
             boxEtatRapport.Text = laVisite.RAP_ETAT;

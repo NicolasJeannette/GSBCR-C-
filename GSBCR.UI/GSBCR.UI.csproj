@@ -162,6 +162,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GSBCR.test\GSBCR.test.csproj">
+      <Project>{d89ef64f-825b-4ed8-a099-394986d59707}</Project>
+      <Name>GSBCR.test</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GSBCR.UCTEST\GSBCR.UCTEST.csproj">
       <Project>{e07e74c9-a8db-4b81-8c93-7429780a3cb3}</Project>
       <Name>GSBCR.UCTEST</Name>
