@@ -45,5 +45,9 @@ namespace GSBCR.UC
             txtPrix.Text = leMedicament.MED_PRIXECHANTILLON.ToString();
         }
 
+        private void UcMedicament_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

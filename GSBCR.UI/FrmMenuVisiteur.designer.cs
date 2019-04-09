@@ -96,6 +96,7 @@
             this.btnVoirValide.TabIndex = 7;
             this.btnVoirValide.Text = "Voir Rapport Validé";
             this.btnVoirValide.UseVisualStyleBackColor = true;
+            this.btnVoirValide.Click += new System.EventHandler(this.btnVoirValide_Click);
             // 
             // btnModif
             // 

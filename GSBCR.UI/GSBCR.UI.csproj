@@ -105,6 +105,12 @@
     <Compile Include="FrmSaisir.designer.cs">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmValider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmValider.Designer.cs">
+      <DependentUpon>FrmValider.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmConnexion.resx">
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmValider.resx">
+      <DependentUpon>FrmValider.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

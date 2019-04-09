@@ -229,6 +229,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UcMedicament";
             this.Size = new System.Drawing.Size(664, 645);
+            this.Load += new System.EventHandler(this.UcMedicament_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

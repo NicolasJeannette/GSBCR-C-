@@ -31,6 +31,21 @@ namespace GSBCR.DAL
             }
             return vis;
         }
+        
+        public static VISITEUR remById(string pass)
+        {
+            VISITEUR vis = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //désactiver le chargement différé
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from v in context.VISITEUR
+                          where v.VIS_MATRICULE == pass 
+                          select v;
+                vis = req.SingleOrDefault<VISITEUR>();
+            }
+            return vis;
+        }
               
     }
 }
