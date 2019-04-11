@@ -85,7 +85,7 @@
             // ucPraticien1
             // 
             this.ucPraticien1.LePraticien = null;
-            this.ucPraticien1.Location = new System.Drawing.Point(113, 40);
+            this.ucPraticien1.Location = new System.Drawing.Point(113, 43);
             this.ucPraticien1.Name = "ucPraticien1";
             this.ucPraticien1.Size = new System.Drawing.Size(654, 623);
             this.ucPraticien1.TabIndex = 4;
