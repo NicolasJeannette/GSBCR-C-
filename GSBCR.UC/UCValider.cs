@@ -13,42 +13,38 @@ namespace GSBCR.UC
 {
     public partial class UCValider : UserControl
     {
-        private RAPPORT_VISITE laVisite = null;
+
         public UCValider()
         {
             InitializeComponent();
         }
-        public RAPPORT_VISITE valider
+
+        public RAPPORT_VISITE lerapport
         {
-            get { return valider; }
+            get { return lerapport; }
             set
             {
-                valider = value;
-                if (valider != null)
+                lerapport = value;
+                if (lerapport != null)
                 {
-                    ucValider_actualiser();
+                   rapport_actualiser();
                 }
 
             }
         }
-        private void ucValider_actualiser()
+
+        private void rapport_actualiser()
         {
-            
-            boxRapport.Text = Convert.ToString(laVisite.RAP_NUM);
-          //  boxPraticien.Text = laVisite.;
-            boxDateVisite.Text = Convert.ToString(laVisite.RAP_DATVISIT);
-            boxMotifVisite.Text = laVisite.RAP_MOTIF;
-            boxEtatRapport.Text = laVisite.RAP_ETAT;
-            boxMedicament.Text = laVisite.RAP_MED1 + " " + laVisite.RAP_MED2;
+            numRap.Text = Convert.ToString(lerapport.RAP_NUM);
+            numPrat.Text = Convert.ToString(lerapport.RAP_PRANUM);
+            datVisit.Text = Convert.ToDateTime(lerapport.RAP_DATVISIT).ToString();
+            motifVisit.Text = lerapport.RAP_MOTIF;
+            etatRap.Text = lerapport.RAP_ETAT;
+            codeMed.Text = lerapport.LeMedicament1.ToString() + lerapport.LeMedicament2.ToString();
 
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UCValider_Load(object sender, EventArgs e)
         {
 
         }

@@ -17,19 +17,36 @@ namespace GSBCR.UI
         public FrmValider(RAPPORT_VISITE visiteur)
         {
             InitializeComponent();
-           
 
-            foreach(RAPPORT_VISITE Manager in Manager.ChargerRapportVisiteurFinis(visiteur.RAP_MATRICULE))
+            ucValider1.Visible = false;
+            comboBox1.SelectedIndex = -1;
+
+            foreach (RAPPORT_VISITE Manager in Manager.ChargerRapportVisiteurFinis(visiteur.RAP_MATRICULE))
             {
-                MessageBox.Show(Manager.RAP_NUM.ToString());
-                comboBox1.Items.Add(Manager.RAP_NUM.ToString());
+                 comboBox1.Items.Add(Manager.RAP_NUM);
             }
-            Manager.ChargerRapportVisiteurFinis(visiteur.RAP_MATRICULE);
+            
+
         }
 
         private void FrmValider_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                if(comboBox1.SelectedIndex != -1)
+            {
+                RAPPORT_VISITE rap = (RAPPORT_VISITE)comboBox1.SelectedItem ;
+                ucValider1.lerapport =rap ;
+                ucValider1.Visible = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close() ;
         }
     }
 }
