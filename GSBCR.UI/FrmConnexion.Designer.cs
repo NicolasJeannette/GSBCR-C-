@@ -46,7 +46,9 @@
             // txt_Mdp
             // 
             this.txt_Mdp.Location = new System.Drawing.Point(109, 139);
+            this.txt_Mdp.MaxLength = 8;
             this.txt_Mdp.Name = "txt_Mdp";
+            this.txt_Mdp.PasswordChar = '*';
             this.txt_Mdp.Size = new System.Drawing.Size(142, 20);
             this.txt_Mdp.TabIndex = 1;
             // 

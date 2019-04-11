@@ -14,7 +14,8 @@ namespace GSBCR.UCTEST
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private string matricule;
+        public Form1(string matricule)
         {
             InitializeComponent();
             bsMedoc.DataSource = Manager.ChargerMedicaments();
@@ -23,9 +24,13 @@ namespace GSBCR.UCTEST
             bsPraticien.DataSource = Manager.ChargerPraticiens();
             cbxPraticien.DataSource = bsPraticien;
             cbxPraticien.DisplayMember = "PRA_NOM";
-            
+            this.matricule = matricule;
             titre.Visible = false;
 
+        }
+
+        public Form1()
+        {
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -63,6 +68,7 @@ namespace GSBCR.UCTEST
                 PRATICIEN p = (PRATICIEN)cbxPraticien.SelectedItem;
                 ucPraticien1.LePraticien = p;
                 ucPraticien1.Visible = true;
+                ucPraticien1.MatriculeText.Text = matricule;
             }
             ucPraticien1.BringToFront();
             

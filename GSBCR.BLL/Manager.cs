@@ -204,5 +204,24 @@ namespace GSBCR.BLL
             PRATICIEN pr = PratricienDAO.FindById(pranum);
             return pr;
         }
+        /// <summary>
+        /// Permet de charger un rapport à partir de son numéro du praticien
+        /// <param name="m">string</param>
+        /// <param name="n">entier</param>
+        /// </summary>
+        public static List<RAPPORT_VISITE> ChargerRapportPraticien(string m, int n)
+        {
+            List<RAPPORT_VISITE> pr = RapportVisiteDAO.FindBypranum(m,n);
+            return pr;
+        }
+        /// <summary>
+        /// Permet de charger un rapport à partir du nom du médicament
+        /// <param name="m">string</param>
+        /// </summary>
+        public static List<RAPPORT_VISITE> ChargerRapportMedicament(string m)
+        {
+            List<RAPPORT_VISITE> pr = RapportVisiteDAO.FindByMedic(m);
+            return pr;
+        }
     }
 }

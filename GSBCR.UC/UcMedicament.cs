@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GSBCR.modele;
+using GSBCR.BLL;
 
 namespace GSBCR.UC
 {
     public partial class UcMedicament : UserControl
     {
         private MEDICAMENT leMedicament = null;
-
+        private List<RAPPORT_VISITE> leRapport;
         public UcMedicament()
         {
             InitializeComponent();
@@ -45,9 +46,22 @@ namespace GSBCR.UC
             txtPrix.Text = leMedicament.MED_PRIXECHANTILLON.ToString();
         }
 
-        private void UcMedicament_Load(object sender, EventArgs e)
+        private void btnVoirRapport_Click(object sender, EventArgs e)
         {
+            leRapport = Manager.ChargerRapportMedicament(txtDepot.Text);
+            dataGridView1.DataSource = leRapport;
 
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                {
+                    if (dataGridView1.Rows[i].Cells[j].Value == null)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = " ";
+                    }
+                }
+
+            }
         }
     }
 }
