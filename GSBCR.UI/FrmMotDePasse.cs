@@ -57,10 +57,19 @@ namespace GSBCR.UI
             }
             else
             {
-                visiteur.vis_mdp = txtConfirmMdp.Text;
-                Manager.ChangerMDP(visiteur);
-                MessageBox.Show("Le mot de passe a été modifiée!");
-                this.Close();
+                if (txtConfirmMdp.TextLength<=6)
+                {
+                    MessageBox.Show("Le mot de passe doit contenir au minimum six caractères!");
+                }
+                else
+                {
+                    visiteur.vis_mdp = txtConfirmMdp.Text;
+                    Manager.ChangerMDP(visiteur);
+                    MessageBox.Show("Le mot de passe a été modifiée!");
+                    this.Close();
+
+                }
+               
 
             }
         }

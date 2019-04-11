@@ -144,7 +144,8 @@ namespace GSBCR.UI
 
         private void btnModifMdp_Click(object sender, EventArgs e)
         {
-            
+            FrmMotDePasse frmMdp = new FrmMotDePasse(matricule);
+            frmMdp.ShowDialog();
         }
     }
 }
