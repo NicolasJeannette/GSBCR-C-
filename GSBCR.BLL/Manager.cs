@@ -143,6 +143,11 @@ namespace GSBCR.BLL
             lrp = RapportVisiteDAO.FindByEtatEtVisiteur(lesMatricules, etats);
             return lrp;
         }
+        public static void ChangerMDP(VISITEUR v)
+        {
+            VisiteurDAO.ChangerMotDePasse(v);
+            
+        }
         /// <summary>
         /// Permet de créer un rapport dans la base de données 
         /// </summary>

@@ -57,6 +57,10 @@ namespace GSBCR.UI
             }
             else
             {
+                visiteur.vis_mdp = txtConfirmMdp.Text;
+                Manager.ChangerMDP(visiteur);
+                MessageBox.Show("Le mot de passe a été modifiée!");
+                this.Close();
 
             }
         }
@@ -81,36 +85,70 @@ namespace GSBCR.UI
 
         private void txtConfirmMdp_TextChanged(object sender, EventArgs e)
         {
-
-            string mdp = txtConfirmMdp.Text;
+            
+            
             if (String.IsNullOrEmpty(txtConfirmMdp.Text))
             {
-                lblNiveau.Text = "faible";
+                lblNiveau.Text = "Faible";
                 pbNiveau.Value = 0;
             }
 
-            else if (txtConfirmMdp.Text.Contains(txtConfirmMdp.Text.ToUpper()) && txtConfirmMdp.Text.All(char.IsNumber) && txtConfirmMdp.Text.Contains(txtConfirmMdp.Text.ToLower()))
-            {
-                lblNiveau.ForeColor = Color.DarkRed;
-                lblNiveau.Text = "faible";
-                pbNiveau.BackColor = Color.DarkRed;
-                pbNiveau.Value = 10;
-            }
-            else if (txtConfirmMdp.Text.All(char.IsNumber))
-            {
-                lblNiveau.ForeColor = Color.DarkRed;
-                lblNiveau.Text = "moyen";
-                pbNiveau.BackColor = Color.Yellow;
-                pbNiveau.Value = 50;
-            }
-            else
-            {
-                lblNiveau.ForeColor = Color.Green;
-                lblNiveau.Text = "fort";
-                pbNiveau.BackColor = Color.Green;
-                pbNiveau.Value = 100;
+            else{
+                bool maj=false, min=false, num=false;
+                char[] caractere = txtConfirmMdp.Text.ToArray();
+                char[] caractereMAJ = txtConfirmMdp.Text.ToUpper().ToArray();
+                char[] caractereMIN = txtConfirmMdp.Text.ToLower().ToArray();
+                char[] chiffre = { '1', '2', '3', '4', '5', '6','7', '8', '9' };
 
+                for (int i = 0; i < txtConfirmMdp.Text.Length; i++)
+                {
+                    if (char.IsLower(caractere[i]))
+                    {
+                        maj = true;
+                    }
+                    if(char.IsUpper(caractere[i]))
+                    {
+                        min = true;
+                    }
+                    for (int j = 0; j < chiffre.Length; j++)
+                    {
+                        if (caractere[i] == Convert.ToChar(chiffre[j]))
+                        {
+                            num = true;
+                        }
+                    }
+                    
+                }
+
+
+               
+                if (min==true && maj==true && num==true)
+                {
+                    lblNiveau.ForeColor = Color.Green;
+                    lblNiveau.Text = "Fort";
+                    pbNiveau.BackColor = Color.Yellow;
+                    pbNiveau.Value = 100;
+                }
+                else if (maj == true && min == true || maj == true && num == true || min == true && num == true)
+                {
+                    lblNiveau.ForeColor = Color.DarkRed;
+                    lblNiveau.Text = "Moyen";
+                    pbNiveau.BackColor = Color.Yellow;
+                    pbNiveau.Value = 50;
+                }
+                else
+                    {
+                        lblNiveau.ForeColor = Color.DarkRed;
+                        lblNiveau.Text = "Faible";
+                        pbNiveau.BackColor = Color.DarkRed;
+                        pbNiveau.Value = 10;
+                    }
+                    
+                
+               
+                
             }
+
         }
     }
     }

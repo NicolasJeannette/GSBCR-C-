@@ -51,6 +51,7 @@
             // 
             this.txtConfirmMdp.Location = new System.Drawing.Point(166, 127);
             this.txtConfirmMdp.Name = "txtConfirmMdp";
+            this.txtConfirmMdp.PasswordChar = '*';
             this.txtConfirmMdp.Size = new System.Drawing.Size(100, 20);
             this.txtConfirmMdp.TabIndex = 1;
             this.txtConfirmMdp.TextChanged += new System.EventHandler(this.txtConfirmMdp_TextChanged);
@@ -59,6 +60,7 @@
             // 
             this.txtNewMdp.Location = new System.Drawing.Point(166, 89);
             this.txtNewMdp.Name = "txtNewMdp";
+            this.txtNewMdp.PasswordChar = '*';
             this.txtNewMdp.Size = new System.Drawing.Size(100, 20);
             this.txtNewMdp.TabIndex = 2;
             this.txtNewMdp.TextChanged += new System.EventHandler(this.txtNewMdp_TextChanged);
