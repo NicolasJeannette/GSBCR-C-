@@ -122,7 +122,7 @@ namespace GSBCR.UI
             this.Close();
             FrmConnexion frm = new FrmConnexion();
             frm.Show();
-           
+            
 
         }
 
@@ -136,7 +136,9 @@ namespace GSBCR.UI
 
         private void btnVoirValide_Click(object sender, EventArgs e)
         {
-            FrmValider v = new FrmValider();
+            RAPPORT_VISITE r = new RAPPORT_VISITE();
+            r.RAP_MATRICULE = leVisiteur.VIS_MATRICULE;
+            FrmValider v = new FrmValider(r);
             v.ShowDialog();
         }
 
