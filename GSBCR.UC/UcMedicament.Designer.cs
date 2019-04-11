@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +49,28 @@
             this.richtxtIndications = new System.Windows.Forms.RichTextBox();
             this.txtPrix = new System.Windows.Forms.TextBox();
             this.btnVoirRapport = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rAPMATRICULEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPNUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPPRANUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPDATVISITDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPETATDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPCONFIANCEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPBILANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPMOTIFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPMOTIFAUTREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPNOMREMPLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPPNOMREMPLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPMED1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPMED2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPPORTVISITEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gSB_Visite_JEANNETTEDataSet = new GSBCR.UC.GSB_Visite_JEANNETTEDataSet();
+            this.rAPPORT_VISITETableAdapter = new GSBCR.UC.GSB_Visite_JEANNETTEDataSetTableAdapters.RAPPORT_VISITETableAdapter();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAPPORTVISITEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_Visite_JEANNETTEDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -207,11 +232,182 @@
             this.btnVoirRapport.TabIndex = 14;
             this.btnVoirRapport.Text = "Voir Rapport Médicament";
             this.btnVoirRapport.UseVisualStyleBackColor = true;
+            this.btnVoirRapport.Click += new System.EventHandler(this.btnVoirRapport_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rAPMATRICULEDataGridViewTextBoxColumn,
+            this.rAPNUMDataGridViewTextBoxColumn,
+            this.rAPPRANUMDataGridViewTextBoxColumn,
+            this.rAPDATEDataGridViewTextBoxColumn,
+            this.rAPDATVISITDataGridViewTextBoxColumn,
+            this.rAPETATDataGridViewTextBoxColumn,
+            this.rAPCONFIANCEDataGridViewTextBoxColumn,
+            this.rAPBILANDataGridViewTextBoxColumn,
+            this.rAPMOTIFDataGridViewTextBoxColumn,
+            this.rAPMOTIFAUTREDataGridViewTextBoxColumn,
+            this.rAPNOMREMPLDataGridViewTextBoxColumn,
+            this.rAPPNOMREMPLDataGridViewTextBoxColumn,
+            this.rAPMED1DataGridViewTextBoxColumn,
+            this.rAPMED2DataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.rAPPORTVISITEBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(51, 622);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.Size = new System.Drawing.Size(590, 223);
+            this.dataGridView1.TabIndex = 22;
+            // 
+            // rAPMATRICULEDataGridViewTextBoxColumn
+            // 
+            this.rAPMATRICULEDataGridViewTextBoxColumn.DataPropertyName = "RAP_MATRICULE";
+            this.rAPMATRICULEDataGridViewTextBoxColumn.HeaderText = "Matricule";
+            this.rAPMATRICULEDataGridViewTextBoxColumn.Name = "rAPMATRICULEDataGridViewTextBoxColumn";
+            this.rAPMATRICULEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPNUMDataGridViewTextBoxColumn
+            // 
+            this.rAPNUMDataGridViewTextBoxColumn.DataPropertyName = "RAP_NUM";
+            this.rAPNUMDataGridViewTextBoxColumn.HeaderText = "Numéro Rapport";
+            this.rAPNUMDataGridViewTextBoxColumn.Name = "rAPNUMDataGridViewTextBoxColumn";
+            this.rAPNUMDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPPRANUMDataGridViewTextBoxColumn
+            // 
+            this.rAPPRANUMDataGridViewTextBoxColumn.DataPropertyName = "RAP_PRANUM";
+            this.rAPPRANUMDataGridViewTextBoxColumn.HeaderText = "Numéro Rapport";
+            this.rAPPRANUMDataGridViewTextBoxColumn.Name = "rAPPRANUMDataGridViewTextBoxColumn";
+            this.rAPPRANUMDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPDATEDataGridViewTextBoxColumn
+            // 
+            this.rAPDATEDataGridViewTextBoxColumn.DataPropertyName = "RAP_DATE";
+            this.rAPDATEDataGridViewTextBoxColumn.HeaderText = "Date Rapport";
+            this.rAPDATEDataGridViewTextBoxColumn.Name = "rAPDATEDataGridViewTextBoxColumn";
+            this.rAPDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPDATVISITDataGridViewTextBoxColumn
+            // 
+            this.rAPDATVISITDataGridViewTextBoxColumn.DataPropertyName = "RAP_DATVISIT";
+            this.rAPDATVISITDataGridViewTextBoxColumn.HeaderText = "Date Visite";
+            this.rAPDATVISITDataGridViewTextBoxColumn.Name = "rAPDATVISITDataGridViewTextBoxColumn";
+            this.rAPDATVISITDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPETATDataGridViewTextBoxColumn
+            // 
+            this.rAPETATDataGridViewTextBoxColumn.DataPropertyName = "RAP_ETAT";
+            this.rAPETATDataGridViewTextBoxColumn.HeaderText = "Etat";
+            this.rAPETATDataGridViewTextBoxColumn.Name = "rAPETATDataGridViewTextBoxColumn";
+            this.rAPETATDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPCONFIANCEDataGridViewTextBoxColumn
+            // 
+            this.rAPCONFIANCEDataGridViewTextBoxColumn.DataPropertyName = "RAP_CONFIANCE";
+            this.rAPCONFIANCEDataGridViewTextBoxColumn.HeaderText = "Confiance";
+            this.rAPCONFIANCEDataGridViewTextBoxColumn.Name = "rAPCONFIANCEDataGridViewTextBoxColumn";
+            this.rAPCONFIANCEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPBILANDataGridViewTextBoxColumn
+            // 
+            this.rAPBILANDataGridViewTextBoxColumn.DataPropertyName = "RAP_BILAN";
+            this.rAPBILANDataGridViewTextBoxColumn.HeaderText = "Bilan";
+            this.rAPBILANDataGridViewTextBoxColumn.Name = "rAPBILANDataGridViewTextBoxColumn";
+            this.rAPBILANDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPMOTIFDataGridViewTextBoxColumn
+            // 
+            this.rAPMOTIFDataGridViewTextBoxColumn.DataPropertyName = "RAP_MOTIF";
+            this.rAPMOTIFDataGridViewTextBoxColumn.HeaderText = "Motif";
+            this.rAPMOTIFDataGridViewTextBoxColumn.Name = "rAPMOTIFDataGridViewTextBoxColumn";
+            this.rAPMOTIFDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPMOTIFAUTREDataGridViewTextBoxColumn
+            // 
+            this.rAPMOTIFAUTREDataGridViewTextBoxColumn.DataPropertyName = "RAP_MOTIFAUTRE";
+            this.rAPMOTIFAUTREDataGridViewTextBoxColumn.HeaderText = "Autre Motif";
+            this.rAPMOTIFAUTREDataGridViewTextBoxColumn.Name = "rAPMOTIFAUTREDataGridViewTextBoxColumn";
+            this.rAPMOTIFAUTREDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPNOMREMPLDataGridViewTextBoxColumn
+            // 
+            this.rAPNOMREMPLDataGridViewTextBoxColumn.DataPropertyName = "RAP_NOMREMPL";
+            this.rAPNOMREMPLDataGridViewTextBoxColumn.HeaderText = "Nom Remplaçant";
+            this.rAPNOMREMPLDataGridViewTextBoxColumn.Name = "rAPNOMREMPLDataGridViewTextBoxColumn";
+            this.rAPNOMREMPLDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPPNOMREMPLDataGridViewTextBoxColumn
+            // 
+            this.rAPPNOMREMPLDataGridViewTextBoxColumn.DataPropertyName = "RAP_PNOMREMPL";
+            this.rAPPNOMREMPLDataGridViewTextBoxColumn.HeaderText = "Prénom Remplaçant";
+            this.rAPPNOMREMPLDataGridViewTextBoxColumn.Name = "rAPPNOMREMPLDataGridViewTextBoxColumn";
+            this.rAPPNOMREMPLDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPMED1DataGridViewTextBoxColumn
+            // 
+            this.rAPMED1DataGridViewTextBoxColumn.DataPropertyName = "RAP_MED1";
+            this.rAPMED1DataGridViewTextBoxColumn.HeaderText = "Médicament 1";
+            this.rAPMED1DataGridViewTextBoxColumn.Name = "rAPMED1DataGridViewTextBoxColumn";
+            this.rAPMED1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPMED2DataGridViewTextBoxColumn
+            // 
+            this.rAPMED2DataGridViewTextBoxColumn.DataPropertyName = "RAP_MED2";
+            this.rAPMED2DataGridViewTextBoxColumn.HeaderText = "Médicament 2";
+            this.rAPMED2DataGridViewTextBoxColumn.Name = "rAPMED2DataGridViewTextBoxColumn";
+            this.rAPMED2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rAPPORTVISITEBindingSource
+            // 
+            this.rAPPORTVISITEBindingSource.DataMember = "RAPPORT_VISITE";
+            this.rAPPORTVISITEBindingSource.DataSource = this.gSB_Visite_JEANNETTEDataSet;
+            // 
+            // gSB_Visite_JEANNETTEDataSet
+            // 
+            this.gSB_Visite_JEANNETTEDataSet.DataSetName = "GSB_Visite_JEANNETTEDataSet";
+            this.gSB_Visite_JEANNETTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rAPPORT_VISITETableAdapter
+            // 
+            this.rAPPORT_VISITETableAdapter.ClearBeforeFill = true;
             // 
             // UcMedicament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnVoirRapport);
             this.Controls.Add(this.txtPrix);
             this.Controls.Add(this.richtxtIndications);
@@ -228,9 +424,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UcMedicament";
-            this.Size = new System.Drawing.Size(664, 645);
+            this.Size = new System.Drawing.Size(852, 848);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rAPPORTVISITEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gSB_Visite_JEANNETTEDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +454,23 @@
         private System.Windows.Forms.RichTextBox richtxtIndications;
         private System.Windows.Forms.TextBox txtPrix;
         private System.Windows.Forms.Button btnVoirRapport;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource rAPPORTVISITEBindingSource;
+        private GSB_Visite_JEANNETTEDataSet gSB_Visite_JEANNETTEDataSet;
+        private GSB_Visite_JEANNETTEDataSetTableAdapters.RAPPORT_VISITETableAdapter rAPPORT_VISITETableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPMATRICULEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPNUMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPPRANUMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPDATVISITDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPETATDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPCONFIANCEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPBILANDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPMOTIFDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPMOTIFAUTREDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPNOMREMPLDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPPNOMREMPLDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPMED1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rAPMED2DataGridViewTextBoxColumn;
     }
 }

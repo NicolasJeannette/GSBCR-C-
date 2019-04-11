@@ -38,6 +38,7 @@
             this.btnPraticien = new System.Windows.Forms.Button();
             this.btnMed = new System.Windows.Forms.Button();
             this.btnDeco = new System.Windows.Forms.Button();
+            this.labelMatricule = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -136,11 +137,23 @@
             this.btnDeco.UseVisualStyleBackColor = true;
             this.btnDeco.Click += new System.EventHandler(this.btnDeco_Click);
             // 
+            // labelMatricule
+            // 
+            this.labelMatricule.AutoSize = true;
+            this.labelMatricule.BackColor = System.Drawing.SystemColors.Control;
+            this.labelMatricule.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelMatricule.Location = new System.Drawing.Point(444, 376);
+            this.labelMatricule.Name = "labelMatricule";
+            this.labelMatricule.Size = new System.Drawing.Size(35, 13);
+            this.labelMatricule.TabIndex = 12;
+            this.labelMatricule.Text = "label4";
+            // 
             // FrmMenuVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 411);
+            this.Controls.Add(this.labelMatricule);
             this.Controls.Add(this.btnDeco);
             this.Controls.Add(this.btnMed);
             this.Controls.Add(this.btnPraticien);
@@ -171,5 +184,6 @@
         private System.Windows.Forms.Button btnPraticien;
         private System.Windows.Forms.Button btnMed;
         private System.Windows.Forms.Button btnDeco;
+        public System.Windows.Forms.Label labelMatricule;
     }
 }

@@ -37,7 +37,7 @@ namespace GSBCR.UI
             else
             {
                 this.Visible = false;
-                FrmMenuVisiteur frmMV = new FrmMenuVisiteur(id, mdp);
+                FrmMenuVisiteur frmMV = new FrmMenuVisiteur(id,mdp);
                 frmMV.ShowDialog();
                 
             }
