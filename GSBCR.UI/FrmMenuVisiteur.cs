@@ -139,5 +139,10 @@ namespace GSBCR.UI
             FrmValider v = new FrmValider();
             v.ShowDialog();
         }
+
+        private void btnModifMdp_Click(object sender, EventArgs e)
+        {
+            frm
+        }
     }
 }
