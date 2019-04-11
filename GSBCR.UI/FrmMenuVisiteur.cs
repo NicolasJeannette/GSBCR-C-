@@ -17,14 +17,16 @@ namespace GSBCR.UI
     {
         private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
-        private string matricule;
+        public string matricule;
         public FrmMenuVisiteur(string id,string mdp)
         {
+           
+            matricule = id;
+            
             InitializeComponent();
             //le visiteur doit être passé en paramètre par le menu de connexion
             //Ici initialiser le visiteur en dur
             //visiteur
-            this.matricule = id;
             leVisiteur = Manager.ChargerVisiteur(id, mdp);
             //délégue
             //leVisiteur = Manager.ChargerVisiteur("r58", "0CC56730");
@@ -43,6 +45,7 @@ namespace GSBCR.UI
         {
             label2.Text = leProfil.TRA_ROLE + " " + leVisiteur.Vis_PRENOM + " " + leVisiteur.VIS_NOM;
             label3.Text = "Region : " + leProfil.REG_CODE;
+            labelMatricule.Text = leProfil.VIS_MATRICULE;
             btnNouveau.Visible = false;
             btnModif.Visible = false;
             btnVoirValide.Visible = false;
@@ -92,7 +95,7 @@ namespace GSBCR.UI
 
         private void btnPraticien_Click(object sender, EventArgs e)
         {
-            Form1 fp = new Form1();
+            Form1 fp = new Form1(matricule);
             fp.cbxMedoc.Visible = false;
             fp.titre.Visible = true;
             fp.titre.Text = "Consultation Praticien";
@@ -104,7 +107,7 @@ namespace GSBCR.UI
 
         private void btnMed_Click(object sender, EventArgs e)
         {
-            Form1 fm = new Form1();
+            Form1 fm = new Form1(matricule);
             fm.cbxPraticien.Visible = false;
             
             fm.titre.Visible = true;
@@ -131,10 +134,10 @@ namespace GSBCR.UI
             f.ShowDialog();
         }
 
-        private void btnChangeMdp_Click(object sender, EventArgs e)
+        private void btnVoirValide_Click(object sender, EventArgs e)
         {
-            FrmMotDePasse frmMdp = new FrmMotDePasse(this.matricule);
-            frmMdp.ShowDialog();
+            FrmValider v = new FrmValider();
+            v.ShowDialog();
         }
     }
 }

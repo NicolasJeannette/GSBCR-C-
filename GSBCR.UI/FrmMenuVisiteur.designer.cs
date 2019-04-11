@@ -38,7 +38,7 @@
             this.btnPraticien = new System.Windows.Forms.Button();
             this.btnMed = new System.Windows.Forms.Button();
             this.btnDeco = new System.Windows.Forms.Button();
-            this.btnChangeMdp = new System.Windows.Forms.Button();
+            this.labelMatricule = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -97,6 +97,7 @@
             this.btnVoirValide.TabIndex = 7;
             this.btnVoirValide.Text = "Voir Rapport Validé";
             this.btnVoirValide.UseVisualStyleBackColor = true;
+            this.btnVoirValide.Click += new System.EventHandler(this.btnVoirValide_Click);
             // 
             // btnModif
             // 
@@ -138,22 +139,23 @@
             this.btnDeco.UseVisualStyleBackColor = true;
             this.btnDeco.Click += new System.EventHandler(this.btnDeco_Click);
             // 
-            // btnChangeMdp
+            // labelMatricule
             // 
-            this.btnChangeMdp.Location = new System.Drawing.Point(405, 362);
-            this.btnChangeMdp.Name = "btnChangeMdp";
-            this.btnChangeMdp.Size = new System.Drawing.Size(110, 37);
-            this.btnChangeMdp.TabIndex = 12;
-            this.btnChangeMdp.Text = "Changer mot de passe";
-            this.btnChangeMdp.UseVisualStyleBackColor = true;
-            this.btnChangeMdp.Click += new System.EventHandler(this.btnChangeMdp_Click);
+            this.labelMatricule.AutoSize = true;
+            this.labelMatricule.BackColor = System.Drawing.SystemColors.Control;
+            this.labelMatricule.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelMatricule.Location = new System.Drawing.Point(444, 376);
+            this.labelMatricule.Name = "labelMatricule";
+            this.labelMatricule.Size = new System.Drawing.Size(35, 13);
+            this.labelMatricule.TabIndex = 12;
+            this.labelMatricule.Text = "label4";
             // 
             // FrmMenuVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 411);
-            this.Controls.Add(this.btnChangeMdp);
+            this.Controls.Add(this.labelMatricule);
             this.Controls.Add(this.btnDeco);
             this.Controls.Add(this.btnMed);
             this.Controls.Add(this.btnPraticien);
@@ -184,6 +186,6 @@
         private System.Windows.Forms.Button btnPraticien;
         private System.Windows.Forms.Button btnMed;
         private System.Windows.Forms.Button btnDeco;
-        private System.Windows.Forms.Button btnChangeMdp;
+        public System.Windows.Forms.Label labelMatricule;
     }
 }
