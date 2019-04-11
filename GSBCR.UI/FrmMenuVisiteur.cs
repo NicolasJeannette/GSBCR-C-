@@ -17,12 +17,14 @@ namespace GSBCR.UI
     {
         private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
+        private string matricule;
         public FrmMenuVisiteur(string id,string mdp)
         {
             InitializeComponent();
             //le visiteur doit être passé en paramètre par le menu de connexion
             //Ici initialiser le visiteur en dur
             //visiteur
+            this.matricule = id;
             leVisiteur = Manager.ChargerVisiteur(id, mdp);
             //délégue
             //leVisiteur = Manager.ChargerVisiteur("r58", "0CC56730");
@@ -127,6 +129,12 @@ namespace GSBCR.UI
             r.RAP_MATRICULE = leVisiteur.VIS_MATRICULE;
             FrmSaisir f = new FrmSaisir(r, true, "modification");
             f.ShowDialog();
+        }
+
+        private void btnChangeMdp_Click(object sender, EventArgs e)
+        {
+            FrmMotDePasse frmMdp = new FrmMotDePasse(this.matricule);
+            frmMdp.ShowDialog();
         }
     }
 }

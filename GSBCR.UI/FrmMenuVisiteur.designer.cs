@@ -38,6 +38,7 @@
             this.btnPraticien = new System.Windows.Forms.Button();
             this.btnMed = new System.Windows.Forms.Button();
             this.btnDeco = new System.Windows.Forms.Button();
+            this.btnChangeMdp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -137,11 +138,22 @@
             this.btnDeco.UseVisualStyleBackColor = true;
             this.btnDeco.Click += new System.EventHandler(this.btnDeco_Click);
             // 
+            // btnChangeMdp
+            // 
+            this.btnChangeMdp.Location = new System.Drawing.Point(405, 362);
+            this.btnChangeMdp.Name = "btnChangeMdp";
+            this.btnChangeMdp.Size = new System.Drawing.Size(110, 37);
+            this.btnChangeMdp.TabIndex = 12;
+            this.btnChangeMdp.Text = "Changer mot de passe";
+            this.btnChangeMdp.UseVisualStyleBackColor = true;
+            this.btnChangeMdp.Click += new System.EventHandler(this.btnChangeMdp_Click);
+            // 
             // FrmMenuVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 411);
+            this.Controls.Add(this.btnChangeMdp);
             this.Controls.Add(this.btnDeco);
             this.Controls.Add(this.btnMed);
             this.Controls.Add(this.btnPraticien);
@@ -172,5 +184,6 @@
         private System.Windows.Forms.Button btnPraticien;
         private System.Windows.Forms.Button btnMed;
         private System.Windows.Forms.Button btnDeco;
+        private System.Windows.Forms.Button btnChangeMdp;
     }
 }
