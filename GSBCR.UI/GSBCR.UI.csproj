@@ -111,6 +111,12 @@
     <Compile Include="FrmSaisir.designer.cs">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmValider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmValider.Designer.cs">
+      <DependentUpon>FrmValider.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmConnexion.resx">
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmValider.resx">
+      <DependentUpon>FrmValider.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -162,6 +171,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GSBCR.test\GSBCR.test.csproj">
+      <Project>{d89ef64f-825b-4ed8-a099-394986d59707}</Project>
+      <Name>GSBCR.test</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GSBCR.UCTEST\GSBCR.UCTEST.csproj">
       <Project>{e07e74c9-a8db-4b81-8c93-7429780a3cb3}</Project>
       <Name>GSBCR.UCTEST</Name>
