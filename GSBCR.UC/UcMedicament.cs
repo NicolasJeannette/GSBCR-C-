@@ -19,6 +19,7 @@ namespace GSBCR.UC
         public UcMedicament()
         {
             InitializeComponent();
+            dataGridView1.Columns[0].Visible = false;
         }
 
         public MEDICAMENT LeMedicament

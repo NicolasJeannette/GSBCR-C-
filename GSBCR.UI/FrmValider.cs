@@ -17,14 +17,10 @@ namespace GSBCR.UI
         public FrmValider(RAPPORT_VISITE visiteur)
         {
             InitializeComponent();
-           
 
-            foreach(RAPPORT_VISITE Manager in Manager.ChargerRapportVisiteurFinis(visiteur.RAP_MATRICULE))
-            {
-                MessageBox.Show(Manager.RAP_NUM.ToString());
-                comboBox1.Items.Add(Manager.RAP_NUM.ToString());
-            }
-            Manager.ChargerRapportVisiteurFinis(visiteur.RAP_MATRICULE);
+           
+           
+           
         }
 
         private void FrmValider_Load(object sender, EventArgs e)

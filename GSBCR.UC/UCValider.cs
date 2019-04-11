@@ -33,14 +33,14 @@ namespace GSBCR.UC
         }
         private void ucValider_actualiser()
         {
-            
+        /*    
             boxRapport.Text = Convert.ToString(laVisite.RAP_NUM);
           //  boxPraticien.Text = laVisite.;
             boxDateVisite.Text = Convert.ToString(laVisite.RAP_DATVISIT);
             boxMotifVisite.Text = laVisite.RAP_MOTIF;
             boxEtatRapport.Text = laVisite.RAP_ETAT;
             boxMedicament.Text = laVisite.RAP_MED1 + " " + laVisite.RAP_MED2;
-
+*/
         }
 
         private void label1_Click(object sender, EventArgs e)
