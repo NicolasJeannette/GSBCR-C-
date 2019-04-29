@@ -48,31 +48,5 @@ namespace GSBCR.UC
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PRATICIEN n = new PRATICIEN();
-
-            MessageBox.Show(
-
-                n.PRA_NOM ,
-                n.PRA_PRENOM
-                
-                );
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MEDICAMENT n = new MEDICAMENT();
-
-            MessageBox.Show(
-
-                n.MED_COMPOSITION,
-                n.MED_EFFETS
- 
-
-
-                );
-        }
     }
 }

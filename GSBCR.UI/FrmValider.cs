@@ -21,20 +21,10 @@ namespace GSBCR.UI
             ucValider1.Visible = false;
             comboBox1.SelectedIndex = -1;
 
-            if(Manager.ChargerRapportVisiteurFinis(visiteur.RAP_MATRICULE).Count != 0)
+            foreach (RAPPORT_VISITE Manager in Manager.ChargerRapportVisiteurFinis(visiteur.RAP_MATRICULE))
             {
-                foreach (RAPPORT_VISITE Manager in Manager.ChargerRapportVisiteurFinis(visiteur.RAP_MATRICULE))
-                {
-                    comboBox1.Items.Add(Manager.RAP_NUM);
-                }
+                 comboBox1.Items.Add(Manager.RAP_NUM);
             }
-
-            else
-            {
-                MessageBox.Show("Fin");
-                this.Close();
-            }
-            
             
 
         }
