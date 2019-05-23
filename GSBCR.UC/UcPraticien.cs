@@ -82,16 +82,10 @@ namespace GSBCR.UC
                 txtType.Text = "Personnel de santé";
                 txtTypeLieu.Text = "Centre Paramédical";
             }
-        }
 
-        
-     
-        private void btnVoirRapport_Click(object sender, EventArgs e)
-        {
-           
-            leRapport =  Manager.ChargerRapportPraticien(MatriculeText.Text,Convert.ToInt32(txtNUM.Text));
+            leRapport = Manager.ChargerRapportPraticien(MatriculeText.Text, Convert.ToInt32(txtNUM.Text));
             dataGridView1.DataSource = leRapport;
-            
+
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 for (int j = 0; j < dataGridView1.ColumnCount; j++)
@@ -101,13 +95,13 @@ namespace GSBCR.UC
                         dataGridView1.Rows[i].Cells[j].Value = " ";
                     }
                 }
-              
+
             }
-
-
-
-
         }
+
+        
+     
+      
 
     }
 }

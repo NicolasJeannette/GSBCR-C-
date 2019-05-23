@@ -39,6 +39,7 @@ namespace GSBCR.DAL
                 //désactiver le chargement différé
                 //context.Configuration.LazyLoadingEnabled = false;
                 var req = from m in context.PRATICIEN.Include("LeType")
+                          orderby m.PRA_NOM 
                           select m;
                 prats = req.ToList<PRATICIEN>();
 

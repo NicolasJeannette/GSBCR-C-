@@ -50,15 +50,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCODE = new System.Windows.Forms.TextBox();
-            this.btnVoirRapport = new System.Windows.Forms.Button();
             this.txtType = new System.Windows.Forms.TextBox();
             this.txtTypeLieu = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rAPPORTVISITEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.gSB_Visite_JEANNETTEDataSet = new GSBCR.UC.GSB_Visite_JEANNETTEDataSet();
-            this.rAPPORT_VISITETableAdapter = new GSBCR.UC.GSB_Visite_JEANNETTEDataSetTableAdapters.RAPPORT_VISITETableAdapter();
             this.rAPMATRICULEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPNUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPPRANUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +68,10 @@
             this.rAPPNOMREMPLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPMED1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPMED2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rAPPORTVISITEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gSB_Visite_JEANNETTEDataSet = new GSBCR.UC.GSB_Visite_JEANNETTEDataSet();
+            this.rAPPORT_VISITETableAdapter = new GSBCR.UC.GSB_Visite_JEANNETTEDataSetTableAdapters.RAPPORT_VISITETableAdapter();
             this.MatriculeText = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -229,16 +228,6 @@
             this.txtCODE.Size = new System.Drawing.Size(100, 20);
             this.txtCODE.TabIndex = 16;
             // 
-            // btnVoirRapport
-            // 
-            this.btnVoirRapport.Location = new System.Drawing.Point(460, 401);
-            this.btnVoirRapport.Name = "btnVoirRapport";
-            this.btnVoirRapport.Size = new System.Drawing.Size(167, 23);
-            this.btnVoirRapport.TabIndex = 17;
-            this.btnVoirRapport.Text = "Voir Rapports";
-            this.btnVoirRapport.UseVisualStyleBackColor = true;
-            this.btnVoirRapport.Click += new System.EventHandler(this.btnVoirRapport_Click);
-            // 
             // txtType
             // 
             this.txtType.Location = new System.Drawing.Point(163, 163);
@@ -318,25 +307,6 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(639, 223);
             this.dataGridView1.TabIndex = 21;
-            // 
-            // rAPPORTVISITEBindingSource
-            // 
-            this.rAPPORTVISITEBindingSource.DataMember = "RAPPORT_VISITE";
-            this.rAPPORTVISITEBindingSource.DataSource = this.bindingSource1;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.gSB_Visite_JEANNETTEDataSet;
-            this.bindingSource1.Position = 0;
-            // 
-            // gSB_Visite_JEANNETTEDataSet
-            // 
-            this.gSB_Visite_JEANNETTEDataSet.DataSetName = "GSB_Visite_JEANNETTEDataSet";
-            this.gSB_Visite_JEANNETTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rAPPORT_VISITETableAdapter
-            // 
-            this.rAPPORT_VISITETableAdapter.ClearBeforeFill = true;
             // 
             // rAPMATRICULEDataGridViewTextBoxColumn
             // 
@@ -436,6 +406,25 @@
             this.rAPMED2DataGridViewTextBoxColumn.Name = "rAPMED2DataGridViewTextBoxColumn";
             this.rAPMED2DataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // rAPPORTVISITEBindingSource
+            // 
+            this.rAPPORTVISITEBindingSource.DataMember = "RAPPORT_VISITE";
+            this.rAPPORTVISITEBindingSource.DataSource = this.bindingSource1;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.gSB_Visite_JEANNETTEDataSet;
+            this.bindingSource1.Position = 0;
+            // 
+            // gSB_Visite_JEANNETTEDataSet
+            // 
+            this.gSB_Visite_JEANNETTEDataSet.DataSetName = "GSB_Visite_JEANNETTEDataSet";
+            this.gSB_Visite_JEANNETTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rAPPORT_VISITETableAdapter
+            // 
+            this.rAPPORT_VISITETableAdapter.ClearBeforeFill = true;
+            // 
             // MatriculeText
             // 
             this.MatriculeText.AutoSize = true;
@@ -455,7 +444,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtTypeLieu);
             this.Controls.Add(this.txtType);
-            this.Controls.Add(this.btnVoirRapport);
             this.Controls.Add(this.txtCODE);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
@@ -502,7 +490,6 @@
         private System.Windows.Forms.TextBox txtCODE;
         public System.Windows.Forms.TextBox txtNUM;
         public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnVoirRapport;
         private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.TextBox txtTypeLieu;
         private System.Windows.Forms.Label label10;

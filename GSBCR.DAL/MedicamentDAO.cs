@@ -38,6 +38,7 @@ namespace GSBCR.DAL
                 //désactiver le chargement différé
                 //context.Configuration.LazyLoadingEnabled = false;
                 var req = from m in context.MEDICAMENT.Include("laFamille")
+                          orderby m.MED_NOMCOMMERCIAL 
                           select m;
                 meds = req.ToList<MEDICAMENT>();
 
@@ -56,6 +57,7 @@ namespace GSBCR.DAL
                 //context.Configuration.LazyLoadingEnabled = false;
                 var req = from p in context.MEDICAMENT.Include("laFamille")
                           where p.FAM_CODE == code
+                          
                           select p;
                 medfam = req.ToList<MEDICAMENT>();
 

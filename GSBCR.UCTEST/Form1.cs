@@ -18,9 +18,11 @@ namespace GSBCR.UCTEST
         public Form1(string matricule)
         {
             InitializeComponent();
+            
             bsMedoc.DataSource = Manager.ChargerMedicaments();
             cbxMedoc.DataSource = bsMedoc;
             cbxMedoc.DisplayMember = "MED_NOMCOMMERCIAL";
+            
             bsPraticien.DataSource = Manager.ChargerPraticiens();
             cbxPraticien.DataSource = bsPraticien;
             cbxPraticien.DisplayMember = "PRA_NOM";

@@ -112,6 +112,7 @@
     <None Include="GSB_Visite_JEANNETTEDataSet.xss">
       <DependentUpon>GSB_Visite_JEANNETTEDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\GSBCR.modele.RAPPORT_VISITE.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -48,7 +48,6 @@
             this.richtxtEffets = new System.Windows.Forms.RichTextBox();
             this.richtxtIndications = new System.Windows.Forms.RichTextBox();
             this.txtPrix = new System.Windows.Forms.TextBox();
-            this.btnVoirRapport = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rAPMATRICULEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPNUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -224,16 +223,6 @@
             this.txtPrix.TabIndex = 13;
             this.txtPrix.TabStop = false;
             // 
-            // btnVoirRapport
-            // 
-            this.btnVoirRapport.Location = new System.Drawing.Point(312, 596);
-            this.btnVoirRapport.Name = "btnVoirRapport";
-            this.btnVoirRapport.Size = new System.Drawing.Size(140, 20);
-            this.btnVoirRapport.TabIndex = 14;
-            this.btnVoirRapport.Text = "Voir Rapport Médicament";
-            this.btnVoirRapport.UseVisualStyleBackColor = true;
-            this.btnVoirRapport.Click += new System.EventHandler(this.btnVoirRapport_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -308,7 +297,7 @@
             // rAPPRANUMDataGridViewTextBoxColumn
             // 
             this.rAPPRANUMDataGridViewTextBoxColumn.DataPropertyName = "RAP_PRANUM";
-            this.rAPPRANUMDataGridViewTextBoxColumn.HeaderText = "Numéro Rapport";
+            this.rAPPRANUMDataGridViewTextBoxColumn.HeaderText = "Numéro Praticien";
             this.rAPPRANUMDataGridViewTextBoxColumn.Name = "rAPPRANUMDataGridViewTextBoxColumn";
             this.rAPPRANUMDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -408,7 +397,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnVoirRapport);
             this.Controls.Add(this.txtPrix);
             this.Controls.Add(this.richtxtIndications);
             this.Controls.Add(this.richtxtEffets);
@@ -453,7 +441,6 @@
         private System.Windows.Forms.RichTextBox richtxtEffets;
         private System.Windows.Forms.RichTextBox richtxtIndications;
         private System.Windows.Forms.TextBox txtPrix;
-        private System.Windows.Forms.Button btnVoirRapport;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource rAPPORTVISITEBindingSource;
         private GSB_Visite_JEANNETTEDataSet gSB_Visite_JEANNETTEDataSet;
