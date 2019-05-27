@@ -31,7 +31,11 @@ namespace GSBCR.DAL
             }
             return vis;
         }
-        
+        /// <summary>
+        /// Données visiteur pour rapport validé
+        /// </summary>
+        /// <param name="pass">Rapport Validé</param>
+        /// <returns>VISITEUR</returns>
         public static VISITEUR remById(string pass)
         {
             VISITEUR vis = null;

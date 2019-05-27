@@ -88,6 +88,7 @@ namespace GSBCR.UC
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
+               
                 for (int j = 0; j < dataGridView1.ColumnCount; j++)
                 {
                     if (dataGridView1.Rows[i].Cells[j].Value == null)
@@ -97,6 +98,7 @@ namespace GSBCR.UC
                 }
 
             }
+            
         }
 
         

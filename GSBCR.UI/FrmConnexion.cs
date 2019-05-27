@@ -19,6 +19,7 @@ namespace GSBCR.UI
         public FrmConnexion()
         {
             InitializeComponent();
+            
         }
 
         private void btn_valider_Click(object sender, EventArgs e)
