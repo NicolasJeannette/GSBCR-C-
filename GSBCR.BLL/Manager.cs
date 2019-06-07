@@ -143,11 +143,6 @@ namespace GSBCR.BLL
             lrp = RapportVisiteDAO.FindByEtatEtVisiteur(lesMatricules, etats);
             return lrp;
         }
-        public static void ChangerMDP(VISITEUR v)
-        {
-            VisiteurDAO.ChangerMotDePasse(v);
-            
-        }
         /// <summary>
         /// Permet de créer un rapport dans la base de données 
         /// </summary>
@@ -209,24 +204,29 @@ namespace GSBCR.BLL
             PRATICIEN pr = PratricienDAO.FindById(pranum);
             return pr;
         }
-        /// <summary>
-        /// Permet de charger un rapport à partir de son numéro du praticien
-        /// <param name="m">string</param>
-        /// <param name="n">entier</param>
-        /// </summary>
-        public static List<RAPPORT_VISITE> ChargerRapportPraticien(string m, int n)
+
+        public static List<VISITEUR> Chargerlesvisiteurs(string secteurCode)
         {
-            List<RAPPORT_VISITE> pr = RapportVisiteDAO.FindBypranum(m,n);
-            return pr;
+            List<VISITEUR> lv = new List<VISITEUR>();
+            VISITEUR vis;
+            List<VAFFECTATION> lvaff = VaffectationDAO.FindBySecteur(secteurCode);
+            foreach (VAFFECTATION vaff in lvaff)
+            {
+                vis = VisiteurDAO.FindById(vaff.VIS_MATRICULE);
+                lv.Add(vis);
+            }
+            return lv;
         }
-        /// <summary>
-        /// Permet de charger un rapport à partir du nom du médicament
-        /// <param name="m">string</param>
-        /// </summary>
-        public static List<RAPPORT_VISITE> ChargerRapportMedicament(string m)
+
+        public static List<REGION> Chargerlesregions(string secteurCode)
         {
-            List<RAPPORT_VISITE> pr = RapportVisiteDAO.FindByMedic(m);
-            return pr;
+            List<REGION> lr = RegionDAO.FindBySector(secteurCode);
+            return lr;
+
+        }
+        public static void CreateTravailler(TRAVAILLER t)
+        {
+            TravaillerDAO.insert(t);
         }
     }
 }

@@ -15,11 +15,9 @@ namespace GSBCR.UI
     public partial class FrmConnexion : Form
     {
         private VISITEUR leVisiteur;
-        private VAFFECTATION vaff;
         public FrmConnexion()
         {
             InitializeComponent();
-            
         }
 
         private void btn_valider_Click(object sender, EventArgs e)
@@ -27,23 +25,19 @@ namespace GSBCR.UI
             string id = txt_ID.Text;
             string mdp = txt_Mdp.Text;
             leVisiteur = Manager.ChargerVisiteur(id,mdp);
-            vaff = Manager.ChargerAffectationVisiteur(id);
+            
             if (txt_ID.Text=="" || txt_Mdp.Text == "")
             {
                 MessageBox.Show("Veuillez renseigner le matricule/le mot de passe");
             }
-            else if (vaff==null)
-            {
-                MessageBox.Show("Cet identifiant n'existe pas");
-            }
             else if (leVisiteur == null)
             {
-                MessageBox.Show("Le mot de passe est erroné");
+                MessageBox.Show("Ce visiteur n'existe pas");
             }
             else
             {
                 this.Visible = false;
-                FrmMenuVisiteur frmMV = new FrmMenuVisiteur(id,mdp);
+                FrmMenuVisiteur frmMV = new FrmMenuVisiteur(id, mdp);
                 frmMV.ShowDialog();
                 
             }

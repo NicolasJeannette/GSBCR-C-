@@ -31,45 +31,8 @@ namespace GSBCR.DAL
             }
             return vis;
         }
-        /// <summary>
-        /// Données visiteur pour rapport validé
-        /// </summary>
-        /// <param name="pass">Rapport Validé</param>
-        /// <returns>VISITEUR</returns>
-        public static VISITEUR remById(string pass)
-        {
-            VISITEUR vis = null;
-            using (var context = new GSB_VisiteEntities())
-            {
-                //désactiver le chargement différé
-                //context.Configuration.LazyLoadingEnabled = false;
-                var req = from v in context.VISITEUR
-                          where v.VIS_MATRICULE == pass 
-                          select v;
-                vis = req.SingleOrDefault<VISITEUR>();
-            }
-            return vis;
-        }
 
-        public static void ChangerMotDePasse(VISITEUR v)
-        {
-            using (var context = new GSB_VisiteEntities())
-            {
-                try
-                {
-                    //mise à jour de l'état du rapport 
-                    context.Entry<VISITEUR>(v).State = System.Data.EntityState.Modified;
-                    //sauvegarde du contexte
-                    context.SaveChanges();
-                }
-                catch (Exception ex)
-                {
 
-                    throw ex;
-                }
-
-            }
-        }
-
+              
     }
 }

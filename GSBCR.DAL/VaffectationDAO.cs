@@ -48,5 +48,21 @@ namespace GSBCR.DAL
             }
             return lv;
         }
+
+        public static List<VAFFECTATION> FindBySecteur(string secteurCode)
+        {
+            List<VAFFECTATION> lv = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                //désactiver le chargement différé
+                //context.Configuration.LazyLoadingEnabled = false;
+                var req = from vaff in context.VAFFECTATION
+                          join reg in context.REGION on vaff.REG_CODE equals reg.REG_CODE
+                          where reg.SEC_CODE == secteurCode && vaff.TRA_ROLE == "Visiteur"
+                          select vaff;
+                lv = req.ToList();
+            }
+            return lv;
+        }
     }
 }

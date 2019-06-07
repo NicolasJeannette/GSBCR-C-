@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -44,17 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="GSB_Visite_JEANNETTEDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB_Visite_JEANNETTEDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="UcMedicament.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -67,12 +56,6 @@
     <Compile Include="UcPraticien.Designer.cs">
       <DependentUpon>UcPraticien.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCValider.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCValider.Designer.cs">
-      <DependentUpon>UCValider.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UcMedicament.resx">
@@ -81,15 +64,8 @@
     <EmbeddedResource Include="UcPraticien.resx">
       <DependentUpon>UcPraticien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCValider.resx">
-      <DependentUpon>UCValider.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GSBCR.BLL\GSBCR.BLL.csproj">
-      <Project>{87304D8D-BE1E-436A-9223-6D9F51178F9F}</Project>
-      <Name>GSBCR.BLL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GSBCR.DAL\GSBCR.DAL.csproj">
       <Project>{065145a2-f3ec-4edc-b31f-758c137a92e8}</Project>
       <Name>GSBCR.DAL</Name>
@@ -98,26 +74,6 @@
       <Project>{d480ec3f-6939-4a26-88d5-aac2769f9f12}</Project>
       <Name>GSBCR.modele</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="GSB_Visite_JEANNETTEDataSet.xsc">
-      <DependentUpon>GSB_Visite_JEANNETTEDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GSB_Visite_JEANNETTEDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GSB_Visite_JEANNETTEDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GSB_Visite_JEANNETTEDataSet.xss">
-      <DependentUpon>GSB_Visite_JEANNETTEDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="packages.config" />
-    <None Include="Properties\DataSources\GSBCR.modele.RAPPORT_VISITE.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

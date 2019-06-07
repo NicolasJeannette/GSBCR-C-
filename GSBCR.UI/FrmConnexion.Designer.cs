@@ -46,9 +46,7 @@
             // txt_Mdp
             // 
             this.txt_Mdp.Location = new System.Drawing.Point(109, 139);
-            this.txt_Mdp.MaxLength = 8;
             this.txt_Mdp.Name = "txt_Mdp";
-            this.txt_Mdp.PasswordChar = '*';
             this.txt_Mdp.Size = new System.Drawing.Size(142, 20);
             this.txt_Mdp.TabIndex = 1;
             // 
@@ -92,7 +90,6 @@
             // 
             // FrmConnexion
             // 
-            this.AcceptButton = this.btn_valider;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 220);

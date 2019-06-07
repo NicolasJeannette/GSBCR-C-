@@ -4,18 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GSBCR.modele;
-
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.Data.SqlClient;
 
 namespace GSBCR.DAL
 {
-    
-
     public static class RapportVisiteDAO
     {
-        
         /// <summary>
         /// Permet de retourner un rapport de visite en connaissant son id
         /// </summary>
@@ -125,55 +120,6 @@ namespace GSBCR.DAL
                 
             }
         }
-        /// <summary>
-        /// Permet de retourner un rapport du visiteur avec le numéro du praticien
-        /// </summary>
-        /// <param name="m">matricule Visiteur</param>
-        /// <param name="n">numéro rapport</param>
-        /// <returns>RAPPORT_VISITE</returns>
-        public static List< RAPPORT_VISITE> FindBypranum(string m, int n)
-        {
-            List<RAPPORT_VISITE> rv = null;
-            // écrire et exécuter la requête Linq
-            using (var context = new GSB_VisiteEntities())
-            {
-                //désactiver le chargement différé
-                //context.Configuration.LazyLoadingEnabled = false;
-                var req = from r in context.RAPPORT_VISITE
-                          where r.RAP_MATRICULE == m && r.RAP_PRANUM == n
-                          select r;
-                
-                rv = req.ToList();
-
-            }
-            return rv;
-
-        }
-        /// <summary>
-        /// Permet de retourner un rapport comprenant le médicament
-        /// </summary>
-        /// <param name="m">Nom Médicament</param>
-        
-        /// <returns>RAPPORT_VISITE</returns>
-        public static List<RAPPORT_VISITE> FindByMedic(string m)
-        {
-            List<RAPPORT_VISITE> rv = null;
-            // écrire et exécuter la requête Linq
-            using (var context = new GSB_VisiteEntities())
-            {
-                //désactiver le chargement différé
-                //context.Configuration.LazyLoadingEnabled = false;
-                var req = from r in context.RAPPORT_VISITE
-                          where (r.RAP_MED1 == m || r.RAP_MED2 == m)
-                          select r;
-
-                rv = req.ToList();
-
-            }
-            return rv;
-
-        }
-
 
 
     }

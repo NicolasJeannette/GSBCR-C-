@@ -8,18 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GSBCR.modele;
-using GSBCR.BLL;
 
 namespace GSBCR.UC
 {
     public partial class UcMedicament : UserControl
     {
         private MEDICAMENT leMedicament = null;
-        private List<RAPPORT_VISITE> leRapport;
+
         public UcMedicament()
         {
             InitializeComponent();
-            dataGridView1.Columns[0].Visible = false;
         }
 
         public MEDICAMENT LeMedicament
@@ -45,27 +43,7 @@ namespace GSBCR.UC
             richtxtIndications.Text = leMedicament.MED_CONTREINDIC;
             richtxtEffets.Text = leMedicament.MED_EFFETS;
             txtPrix.Text = leMedicament.MED_PRIXECHANTILLON.ToString();
-
-
-            
-            leRapport = Manager.ChargerRapportMedicament(txtDepot.Text);
-            dataGridView1.DataSource = leRapport;
-            
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                {
-                    if (dataGridView1.Rows[i].Cells[j].Value == null)
-                    {
-                        dataGridView1.Rows[i].Cells[j].Value = " ";
-                    }
-                }
-
-            }
-
         }
 
-      
-           
     }
 }

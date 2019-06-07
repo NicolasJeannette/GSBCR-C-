@@ -44,9 +44,9 @@
             // ucMedicament1
             // 
             this.ucMedicament1.LeMedicament = null;
-            this.ucMedicament1.Location = new System.Drawing.Point(83, 40);
+            this.ucMedicament1.Location = new System.Drawing.Point(113, 40);
             this.ucMedicament1.Name = "ucMedicament1";
-            this.ucMedicament1.Size = new System.Drawing.Size(668, 849);
+            this.ucMedicament1.Size = new System.Drawing.Size(668, 705);
             this.ucMedicament1.TabIndex = 0;
             // 
             // titre
@@ -74,7 +74,7 @@
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(800, 820);
+            this.btnClose.Location = new System.Drawing.Point(800, 651);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(105, 38);
             this.btnClose.TabIndex = 3;
@@ -85,9 +85,9 @@
             // ucPraticien1
             // 
             this.ucPraticien1.LePraticien = null;
-            this.ucPraticien1.Location = new System.Drawing.Point(12, 40);
+            this.ucPraticien1.Location = new System.Drawing.Point(113, 40);
             this.ucPraticien1.Name = "ucPraticien1";
-            this.ucPraticien1.Size = new System.Drawing.Size(782, 679);
+            this.ucPraticien1.Size = new System.Drawing.Size(654, 623);
             this.ucPraticien1.TabIndex = 4;
             // 
             // cbxPraticien
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 901);
+            this.ClientSize = new System.Drawing.Size(910, 719);
             this.Controls.Add(this.cbxPraticien);
             this.Controls.Add(this.ucPraticien1);
             this.Controls.Add(this.btnClose);

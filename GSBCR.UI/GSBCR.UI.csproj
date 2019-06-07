@@ -99,29 +99,11 @@
     <Compile Include="FrmMenuVisiteur.designer.cs">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMotDePasse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMotDePasse.Designer.cs">
-      <DependentUpon>FrmMotDePasse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPraticien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPraticien.Designer.cs">
-      <DependentUpon>FrmPraticien.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmSaisir.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmSaisir.designer.cs">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmValider.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmValider.Designer.cs">
-      <DependentUpon>FrmValider.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,17 +113,8 @@
     <EmbeddedResource Include="FrmMenuVisiteur.resx">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMotDePasse.resx">
-      <DependentUpon>FrmMotDePasse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPraticien.resx">
-      <DependentUpon>FrmPraticien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmValider.resx">
-      <DependentUpon>FrmValider.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,7 +127,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="Properties\DataSources\GSBCR.BLL.Manager.datasource" />
     <None Include="Properties\DataSources\GSBCR.DC.RapportVisite.datasource" />
     <None Include="Properties\DataSources\GSBCR.modele.RAPPORT_VISITE.datasource" />
@@ -181,10 +153,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GSBCR.test\GSBCR.test.csproj">
-      <Project>{d89ef64f-825b-4ed8-a099-394986d59707}</Project>
-      <Name>GSBCR.test</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GSBCR.UCTEST\GSBCR.UCTEST.csproj">
       <Project>{e07e74c9-a8db-4b81-8c93-7429780a3cb3}</Project>
       <Name>GSBCR.UCTEST</Name>

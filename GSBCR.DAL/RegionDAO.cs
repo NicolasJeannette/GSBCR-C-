@@ -47,5 +47,19 @@ namespace GSBCR.DAL
 
             return regions;
         }
+
+        public static List<REGION> FindBySector(string secteurCode)
+        {
+            List<REGION> region = null;
+
+            using (var context = new GSB_VisiteEntities())
+            {
+                var req = from m in context.REGION
+                          where m.SEC_CODE == secteurCode
+                          select m;
+                region = req.ToList<REGION>();
+            }
+            return region;
+        }
     }
 }
