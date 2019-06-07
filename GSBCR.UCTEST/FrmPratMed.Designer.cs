@@ -1,6 +1,6 @@
 ﻿namespace GSBCR.UCTEST
 {
-    partial class Form1
+    partial class FrmPratMed
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

@@ -101,6 +101,7 @@
             this.Controls.Add(this.txt_ID);
             this.Name = "FrmConnexion";
             this.Text = "Connexion";
+            this.Load += new System.EventHandler(this.FrmConnexion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

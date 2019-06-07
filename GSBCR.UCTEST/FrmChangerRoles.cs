@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace GSBCR.UCTEST
 {
-    public partial class Form2 : Form
+    public partial class FrmChangerRoles : Form
     {
         private VISITEUR leVisiteur;
-        public Form2(string id, string mdp)
+        public FrmChangerRoles(string id, string mdp)
         {
             InitializeComponent();
             leVisiteur = Manager.ChargerVisiteur(id,mdp);
@@ -66,7 +66,6 @@ namespace GSBCR.UCTEST
 
         private void bindingSource2_CurrentChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
