@@ -91,7 +91,7 @@ namespace GSBCR.UI
 
         private void btnPraticien_Click(object sender, EventArgs e)
         {
-            Form1 fp = new Form1();
+            FrmPratMed fp = new FrmPratMed();
             fp.cbxMedoc.Visible = false;
             fp.titre.Visible = true;
             fp.titre.Text = "Consultation Praticien";
@@ -103,7 +103,7 @@ namespace GSBCR.UI
 
         private void btnMed_Click(object sender, EventArgs e)
         {
-            Form1 fm = new Form1();
+            FrmPratMed fm = new FrmPratMed();
             fm.cbxPraticien.Visible = false;
             
             fm.titre.Visible = true;
@@ -132,7 +132,7 @@ namespace GSBCR.UI
 
         private void btnRole_Click(object sender, EventArgs e)
         {
-            Form2 fr = new Form2(leProfil.VIS_MATRICULE, leVisiteur.vis_mdp);
+            FrmChangerRoles fr = new FrmChangerRoles(leProfil.VIS_MATRICULE, leVisiteur.vis_mdp);
             fr.ShowDialog();
 
         }

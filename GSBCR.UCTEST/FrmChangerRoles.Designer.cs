@@ -1,6 +1,6 @@
 ﻿namespace GSBCR.UCTEST
 {
-    partial class Form2
+    partial class FrmChangerRoles
     {
         /// <summary>
         /// Required designer variable.

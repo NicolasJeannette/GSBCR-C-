@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace GSBCR.UCTEST
 {
-    public partial class Form1 : Form
+    public partial class FrmPratMed : Form
     {
-        public Form1()
+        public FrmPratMed()
         {
             InitializeComponent();
             bsMedoc.DataSource = Manager.ChargerMedicaments();
