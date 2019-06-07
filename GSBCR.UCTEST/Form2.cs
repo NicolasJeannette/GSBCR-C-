@@ -66,7 +66,6 @@ namespace GSBCR.UCTEST
 
         private void bindingSource2_CurrentChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

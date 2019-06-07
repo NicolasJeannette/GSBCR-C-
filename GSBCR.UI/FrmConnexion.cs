@@ -46,5 +46,10 @@ namespace GSBCR.UI
             
             
         }
+
+        private void FrmConnexion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
